@@ -13,6 +13,7 @@ $db_handle = mysqli_connect('localhost', 'root', '');
 $db_found = mysqli_select_db($db_handle, $database);
 	
 $result = mysqli_query($db_handle,"SELECT * FROM acheteur WHERE Mail LIKE '$Mail'");
+
 //regarder s'il y a de résultat
 if($db_found){
 	if (mysqli_num_rows($result) != 0 ) 

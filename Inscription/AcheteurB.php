@@ -6,6 +6,7 @@
    $db_login = "root";
    $db_pass	= "";
 
+
 $database= "ebayece";
 //Rappel:votre serveur = localhost | votre login = root | votre mot de pass = ''(rien)
 $db_handle = mysqli_connect('localhost', 'root', '');
@@ -29,7 +30,8 @@ $Solde = 0;
 $Verif=0;
 
 //Verifier si le mail du nouveau profil existe déjà ou non dans la bdd
-if($db_found) {
+if($db_found) 
+{
 
 	$sql = "SELECT * FROM acheteur";
 	$result = mysqli_query($db_handle,$sql);
@@ -38,7 +40,9 @@ if($db_found) {
 		if($Mail == $data['Mail'])
 			{$Verif=1;}
 		}
-	}
+}
+else
+{$Verif=2;}
 
 
 if($Verif==0)
@@ -68,7 +72,8 @@ else if ($Verif==1)
 {echo "Mail déjà existant. <br> <br>";
 echo  "http://localhost/ProjetInfo/Inscription/Acheteur.php";
 }
-
+else if ($Verif==2)
+{echo "Database not found. <br> <br>";}
 
 
 
