@@ -30,9 +30,9 @@
   </button>
   <div class="dropdown-menu">
     
-    <a class="dropdown-item" href="http://localhost/ProjetInfo/FerrailleTresor.php">Ferraille ou Trésor</a>
-    <a class="dropdown-item" href="http://localhost/ProjetInfo/BonMusee.php">Bon pour le Musée</a>
-    <a class="dropdown-item" href="http://localhost/ProjetInfo/AccessoireVIP.php">Accessoire VIP</a>
+    <a class="dropdown-item" href="http://localhost/ProjetInfo/Categories/FerrailleTresor.php">Ferraille ou Trésor</a>
+    <a class="dropdown-item" href="http://localhost/ProjetInfo/Categories/BonMusee.php">Bon pour le Musée</a>
+    <a class="dropdown-item" href="http://localhost/ProjetInfo/Categories/AccessoireVIP.php">Accessoire VIP</a>
   </div>
 </div>
 

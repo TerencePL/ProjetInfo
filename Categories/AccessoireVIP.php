@@ -1,24 +1,25 @@
   <!DOCTYPE html>
   <html>
   <head>
-  <title>Ferraille et Trésor</title>
+  <title>Accesoires VIP</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
    <link rel="stylesheet"
    href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="C:\wamp64\www\ProjetInfo\FerrailleTresor.css">
+  <link rel="stylesheet" type="text/css" href="C:\wamp64\www\ProjetInfo\Categorie.css">
   <script type="text/javascript">
    $(document).ready(function(){
    $('.header').height($(window).height());
    });
   </script>
-  <?php include("HautDePage.php"); ?>
-</head>
-<body>
+<?php include("C:\wamp64\www\ProjetInfo\HautDePage.php"); ?>
+  </head>
+  <body>
 
-    <!-- Page Content -->
+
+ <!-- Page Content -->
   <div class="container-fluid">
 
     <div class="row">
@@ -68,7 +69,7 @@
 
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100">
-              <a href="#"><img class="card-img-top" src="tresor1.jpg" alt=""></a>
+              <a href="#"><img class="card-img-top" src="chicago.jpg" alt=""></a>
               <div class="card-body">
                 <h4 class="card-title">
                   <a href="#">Louis d'Or</a>
@@ -173,12 +174,10 @@
 
   </div>
   <!-- /.container -->
- <?php include("BasDePage.php"); ?>
-</body>
+  
+  <?php include("C:\wamp64\www\ProjetInfo\BasDePage.php"); ?>
 
 
-
-
-
+  </body>
 
   </html>

@@ -1,7 +1,7 @@
   <!DOCTYPE html>
   <html>
   <head>
-  <title>Accesoires VIP</title>
+  <title>Bon pour le Musée</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
    <link rel="stylesheet"
@@ -14,11 +14,9 @@
    $('.header').height($(window).height());
    });
   </script>
-<?php include("HautDePage.php"); ?>
+  <?php include("C:\wamp64\www\ProjetInfo\HautDePage.php"); ?>
   </head>
   <body>
-
-
  <!-- Page Content -->
   <div class="container-fluid">
 
@@ -69,7 +67,7 @@
 
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100">
-              <a href="#"><img class="card-img-top" src="chicago.jpg" alt=""></a>
+              <a href="#"><img class="card-img-top" src="jordan1dior.jpg" alt=""></a>
               <div class="card-body">
                 <h4 class="card-title">
                   <a href="#">Louis d'Or</a>
@@ -174,8 +172,10 @@
 
   </div>
   <!-- /.container -->
+
+
   
-  <?php include("BasDePage.php"); ?>
+  <?php include("C:\wamp64\www\ProjetInfo\BasDePage.php"); ?>
 
 
   </body>

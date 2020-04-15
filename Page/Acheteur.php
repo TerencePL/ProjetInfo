@@ -31,7 +31,7 @@ session_start();
 
       <?php //**************************[[A REMPLACER PAR DU TEXTE SI PERSONNE N'EST CONNECTE]]****************************** ?>
 
-
+ 
           <h1>Bienvenue: </h1>
 
             <?php // recupération des infos du compte connecté depuis la BDD via son ID
