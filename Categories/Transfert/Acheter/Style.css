@@ -1,0 +1,63 @@
+nav ul ul{
+    display: none;
+    position: absolute;
+    left: 144px;
+    top: 0px;
+    margin:0px;
+    padding: 0px;
+}
+nav li{
+    text-align: center;
+    list-style-type: none;
+    position: relative;
+    width: 140px;
+    padding: 2px;
+    margin: 0px
+}
+nav li li{
+    background-color: lightgray;
+}
+nav li:hover{
+    background-color: darkgrey;
+}
+nav li:hover ul.l2{
+    display: block;
+}
+nav a{
+    text-decoration: none;
+    color: black;
+}
+body{
+    font-family: Arial, Verdana, 'Trebuchet MS';
+    background: url(Images/fond.jpg);
+    background-size: cover;
+}
+header{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 90px;
+    grid-gap: 10px;
+    border: 1px solid black;
+    background-color: white;
+    opacity: 0.8;
+}
+#nom{
+    text-align: center;
+}
+#connexion{
+    margin: 20px;
+}
+#connex{
+    float: right;
+}
+footer{
+    clear: both;
+    text-align: center;
+    padding: 10px; 
+    border: 1px solid black;
+    background-color: white;
+    opacity: 0.8;
+}
+#currentpage{
+    font-size: 1.4em;
+}

@@ -1,0 +1,37 @@
+#corps{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 350px 350px;
+    grid-gap: 10px;
+}
+.boutton{
+    margin: 15px;
+    padding: 3px;
+    display: inline-block;
+    border: 3px grey inset;
+    border-radius: 5px;
+    font-size: 1.5em;
+    background-color: white;
+    text-decoration: none;
+    color: black;
+}
+#livres{
+    margin: 5px;
+    background: url(Images/livres.jpg);
+    background-size: cover;
+}
+#musique{
+    margin: 5px;
+    background: url(Images/musique.jpg);
+    background-size: cover;
+}
+#vetements{
+    margin: 5px;
+    background: url(Images/vetements.jpg);
+    background-size: cover;
+}
+#loisir{
+    margin: 5px;
+    background: url(Images/sport.jpg);
+    background-size: cover;
+}
