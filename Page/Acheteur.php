@@ -5,7 +5,7 @@ session_start();
   <!DOCTYPE html>
   <html>
   <head>
-  <title>Page Principale</title>
+  <title>Compte acheteur</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
    <link rel="stylesheet"
@@ -41,17 +41,18 @@ session_start();
               $db_found = mysqli_select_db($db_handle, $database);
 
 
-              if($_SESSION['ID']!='')
-                {$ID=$_SESSION['ID'];}
+              if(isset($_SESSION['ID']))
+                {$ID=$_SESSION['ID'];
 
               $result = mysqli_query($db_handle,"SELECT * FROM acheteur WHERE ID LIKE '$ID'");
               $row = mysqli_fetch_array($result);
+          		}
             ?>
 
 
               <ul>
-                <li> <?php echo "Nom: ".$row['Nom'];?> </li>
-                <li> <?php echo "Prenom: ".$row['Prenom'];?> </li> 
+                <li>  <?php if(isset($_SESSION['ID'])) {echo "Nom: ".$row['Nom'];} ?> </li>
+                <li> <?php if(isset($_SESSION['ID'])) {echo "Prenom: ".$row['Prenom'];}?> </li> 
                     
               </ul>  
 
