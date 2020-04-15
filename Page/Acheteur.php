@@ -28,15 +28,39 @@ session_start();
     <div class="overlay"></div>
     <div class="overlay"></div>
        <div class="description">
+
+      <?php //**************************[[A REMPLACER PAR DU TEXTE SI PERSONNE N'EST CONNECTE]]****************************** ?>
+
+
           <h1>Bienvenue: </h1>
+
+            <?php // recupération des infos du compte connecté depuis la BDD via son ID
+              $database = "ebayece";
+
+              $db_handle = mysqli_connect('localhost', 'root', '');
+              $db_found = mysqli_select_db($db_handle, $database);
+
+
+              if($_SESSION['ID']!='')
+                {$ID=$_SESSION['ID'];}
+
+              $result = mysqli_query($db_handle,"SELECT * FROM acheteur WHERE ID LIKE '$ID'");
+              $row = mysqli_fetch_array($result);
+            ?>
+
+
               <ul>
-                <li>Nom:</li>
-                <li>Prenom:</li> 
-                <li> <?php echo "ID: ".$_SESSION['ID']; ?> </li>     
+                <li> <?php echo "Nom: ".$row['Nom'];?> </li>
+                <li> <?php echo "Prenom: ".$row['Prenom'];?> </li> 
+                    
               </ul>  
 
               <br>
               <a href="http://localhost/ProjetInfo/Deconnexion/Deconnexion.php" title="Deconnexion">Deconnexion</a>
+
+
+        <?php //********************************************************************************************************* ?>
+
         </div>
   </header>
 

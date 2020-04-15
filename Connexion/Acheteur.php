@@ -45,7 +45,14 @@ session_start();
         </div>
 
     <br>
-    <?php echo "ID connecté: ".$_SESSION['ID']; ?>
+
+    <?php
+    if($_SESSION['ID']!='')
+    {
+     echo "ID connecté: ".$_SESSION['ID'];
+    }
+    ?>
+    
     <br>
     <a href="http://localhost/ProjetInfo/Deconnexion/Deconnexion.php" title="Deconnexion">Deconnexion</a>
 </header>

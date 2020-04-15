@@ -1,5 +1,4 @@
 <?php
-
 session_start();
 
 $Mail = isset($_POST['mail'])? $_POST['mail'] : "";
