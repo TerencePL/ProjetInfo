@@ -62,6 +62,9 @@
     Votre Compte
   </button>
   <div class="dropdown-menu">
+    <a class="dropdown-item" href="http://localhost/ProjetInfo/Page/Acheteur.php">Mon compte acheteur</a>
+    <a class="dropdown-item" href="http://localhost/ProjetInfo/Connexion/Acheteur.php">Connexion acheteur</a>
+    <a class="dropdown-item" href="http://localhost/ProjetInfo/Deconnexion/Deconnexion.php">Deconnexion</a>
     <a class="dropdown-item" href="http://localhost/ProjetInfo/Inscription/Acheteur.php">Créer un compte</a>
   </div>
 </div>
