@@ -1,25 +1,67 @@
+<?php
+session_start();
+
+$database = "ebayece";
+
+$db_handle = mysqli_connect('localhost', 'root', '');
+$db_found = mysqli_select_db($db_handle, $database);
+$j=0;
+$NbArticles=0;
+  
+//si le BDD existe, faire le traitement. Trouver les ID des livres
+if($db_found) 
+{
+  $result = mysqli_query($db_handle, "SELECT * FROM produit WHERE Categorie = 3 ORDER BY ID_Produit" );
+  while($data = mysqli_fetch_assoc($result)) 
+  {
+    $ID=$data['ID_Produit'];
+    
+    $resultBIS = mysqli_query($db_handle, "SELECT * FROM produit Where ID_Produit like '$ID'");
+    while($data2 = mysqli_fetch_assoc($resultBIS)) 
+    {
+      $j=$j+1;
+
+      $IDBis[$j] = $data2['ID_Produit'];
+      $Nom[$j] = $data2['Nom'];
+      $Prix[$j] = $data2['Prix'].'</br>';
+
+      $Description[$j] = $data2['Description'];
+      $Stock[$j] = $data2['Stock'];
+
+      //$Sport[$j] = $data['Sport'];
+
+    }//end while 
+    echo '</br>';
+    $NbArticles=$j;
+  }//end while 
+}//endif
+else{echo "ma base n'existe pas";}
+
+?>  
+
+
+
   <!DOCTYPE html>
   <html>
   <head>
-  <title>Accesoires VIP</title>
+  <title>Accessoires VIP</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
    <link rel="stylesheet"
    href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="C:\wamp64\www\ProjetInfo\Categorie.css">
+  <link rel="stylesheet" type="text/css" href="C:\wamp64\www\ProjetInfo\FerrailleTresor.css">
   <script type="text/javascript">
    $(document).ready(function(){
    $('.header').height($(window).height());
    });
   </script>
-<?php include("C:\wamp64\www\ProjetInfo\HautDePage.php"); ?>
-  </head>
-  <body>
+  <?php include("C:\wamp64\www\ProjetInfo\HautDePage.php"); ?>
+</head>
+<body>
 
-
- <!-- Page Content -->
+    <!-- Page Content -->
   <div class="container-fluid">
 
     <div class="row">
@@ -65,103 +107,50 @@
           </a>
         </div>
 
+
+
         <div class="row">
 
+
+
+      <?php       
+      // ________________Boucle qui parcoure le nombre de produits en vente de la categorie___________________
+        for($i = 1; $i <= $NbArticles; $i++)
+        {
+          ?>
+
+
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100">
-              <a href="#"><img class="card-img-top" src="chicago.jpg" alt=""></a>
-              <div class="card-body">
-                <h4 class="card-title">
-                  <a href="#">Louis d'Or</a>
-                </h4>
-                <h5>$2400.99</h5>
-                <p class="card-text">Louis d'Or</p>
-              </div>
-              <div class="card-footer">
+              <a href="#"><img class="card-img-top" src="tresor1.jpg" alt=""></a>
+                  <div class="card-body">
+
+                    <h4 class="card-title">
+                      <a href="#"> <?php echo "".$Nom[$i].'</br>'; ?> </a>
+                    </h4>
+
+                    <h5>  <?php echo "Description: ".$Description[$i].'</br>'; ?>  </h5>
+                    <h5>  <?php echo "$".$Prix[$i]; ?> </h5>
+                    <h5>  <?php echo "Sotck: ".$Stock[$i]; ?> </h5>
+                  </div>
+
+              <div class="card-footer" action="http://localhost/ProjetInfo/AjoutPanier.php" method="post">
                 <button>Acheter</button>
               </div>
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100">
-              <a href="#"><img class="card-img-top" src="tresor2.jpg" alt=""></a>
-              <div class="card-body">
-                <h4 class="card-title">
-                  <a href="#">Couronne de l'Impératrice Eugénie</a>
-                </h4>
-                <h5>$1200.99</h5>
-                <p class="card-text" href="chicago.php">Jordan1 Off White Chicago</p>
-              </div>
-              <div class="card-footer">
-                <button>Acheter</button>
-              </div>
-            </div>
-          </div>
 
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100">
-              <a href="#"><img class="card-img-top" src="tresor3.jpg" alt=""></a>
-              <div class="card-body">
-                <h4 class="card-title">
-                  <a href="#">The Angelsey tiara, periodo vittoriano</a>
-                </h4>
-                <h5>$2000.99</h5>
-                <p class="card-text">Jordan 1 Off White NRG</p>
-              </div>
-              <div class="card-footer">
-                <button>Acheter</button>
-              </div>
-            </div>
-          </div>
 
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100">
-              <a href="#"><img class="card-img-top" src="fragment.jpg" alt=""></a>
-              <div class="card-body">
-                <h4 class="card-title">
-                  <a href="#">Item Four</a>
-                </h4>
-                <h5>$24.99</h5>
-                <p class="card-text">Jordan 1 Fragment</p>
-              </div>
-              <div class="card-footer">
-                <button>Acheter</button>
-              </div>
-            </div>
-          </div>
+        <?php
+        }   //______________________________________Fin de la boucle________________________________
+      ?>
 
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100">
-              <a href="#"><img class="card-img-top" src="bredtoe.jpg" alt=""></a>
-              <div class="card-body">
-                <h4 class="card-title">
-                  <a href="#">Item Five</a>
-                </h4>
-                <h5>$24.99</h5>
-                <p class="card-text">Jordan 1 Bred Toe</p>
-              </div>
-              <div class="card-footer">
-                <button>Acheter</button>
-              </div>
-            </div>
-          </div>
 
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100">
-              <a href="#"><img class="card-img-top" src="pinegreen.jpg" alt=""></a>
-              <div class="card-body">
-                <h4 class="card-title">
-                  <a href="#">Item Six</a>
-                </h4>
-                <h5>$24.99</h5>
-                <p class="card-text">Jordan 1 Pine Green</p>
-              </div>
-              <div class="card-footer">
-                <button>Acheter</button>
-              </div>
-            </div>
-          </div>
+         
+
+
+
 
         </div>
         <!-- /.row -->
@@ -174,10 +163,20 @@
 
   </div>
   <!-- /.container -->
-  
-  <?php include("C:\wamp64\www\ProjetInfo\BasDePage.php"); ?>
+ <?php include("C:\wamp64\www\ProjetInfo\BasDePage.php"); ?>
+</body>
 
 
-  </body>
+<?php $i=1   //A laisser pour le moment ?>
+          <article>
+                  <form action="http://localhost/ProjetInfo/AjoutPanier.php" method="post">
+                    <td colspan="2" align="right"><input type="submit" value="Ajouter au panier" />
+                    <input type="hidden" name="ID_Produit" value='<?php echo $IDBis[$i]?>' /></td>
+                  </form>
+
+          </article>
+          <br><br>
+
+
 
   </html>
