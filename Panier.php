@@ -190,13 +190,27 @@ else{echo "ma base n'existe pas";}
        }  //Fin Else
       ?>
 
-      <?php
-		echo "</br>"."Prix total du panier: ".$PrixTotal;
-		//echo "</br>"."ID1: ".$ID_Produit1;
-		$_SESSION['PrixPanier'] = $PrixTotal;
-		?>
-		<br>
-      <a href="http://localhost/ProjetInfo/Vider.php">Vider le panier</a>
+
+
+      <div class="card h-100">
+	      	<?php
+				echo "Prix total du panier: ".$PrixTotal;
+				//echo "</br>"."ID1: ".$ID_Produit1;
+				$_SESSION['PrixPanier'] = $PrixTotal;
+			?>
+			<br>
+
+			<form action="http://localhost/ProjetInfo/Acheter/Achat.php" method="post">
+			<td colspan="2" align="center"><input type="submit" value="Acheter"></td> 
+			<br>
+			<div class="card-footer" action="http://localhost/ProjetInfo/AjoutPanier.php" method="post">
+                <button>Acheter</button>
+             </div>
+            <br>
+		    <a href="http://localhost/ProjetInfo/Vider.php">Vider le panier</a>
+	</div>
+	
+<?php include("C:\wamp64\www\ProjetInfo\BasDePage.php"); ?>
 
         </div>
         <!-- /.row -->
@@ -212,23 +226,5 @@ else{echo "ma base n'existe pas";}
 
 </div>
 
-
-
-
-<form action="http://localhost/ProjetInfo/Acheter/Achat.php" method="post">
-<input type="hidden" name="prix"></input>
-<input type="hidden" name="ID_Produit1" value="<?php $ID_Produit1 ?>"> </input>
-<input type="hidden" name="ID_Produit2"></input>
-<input type="hidden" name="ID_Produit3"></input>
-<input type="hidden" name="ID_Produit4"></input>
-<input type="hidden" name="ID_Produit5"></input>
-<td colspan="2" align="center"><input type="submit" value="Acheter"></td> 
-
-
-
-
-
-
-  <?php include("C:\wamp64\www\ProjetInfo\BasDePage.php"); ?>
 
 </html>
