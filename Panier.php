@@ -146,15 +146,15 @@ else{echo "ma base n'existe pas";}
 <?php include("HautDePage.php"); ?>
 
   <header class="page-header header container-fluid">
-    <div class="overlay"></div>
-    <div class="overlay"></div>
+  <div class="overlay"></div>
+  <div class="overlay"></div>
   <div class="description">
    <h1> Bienvenue sur le Site EBAY ECE </h1>
 		<div id="corps">
 			
 
       <?php       
-      // ________________Boucle qui parcoure le nombre de produits en vente de la categorie___________________
+      // ________________Boucle qui parcoure le nombre de produits dans le panier___________________
       if($NbArticles==0)
 		{echo "Panier vide.";}
 		else{
