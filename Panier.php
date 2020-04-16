@@ -149,14 +149,14 @@ else{echo "ma base n'existe pas";}
   <div class="overlay"></div>
   <div class="overlay"></div>
   <div class="description">
-   <h1> Bienvenue sur le Site EBAY ECE </h1>
+   <h1> Panier </h1>
 		<div id="corps">
 			
 
       <?php       
       // ________________Boucle qui parcoure le nombre de produits dans le panier___________________
       if($NbArticles==0)
-		{echo "Panier vide.";}
+		{echo "Panier vide. <br><br>";}
 		else{
 		for($i = 1; $i <= $NbArticles; $i++)
         {
@@ -190,6 +190,13 @@ else{echo "ma base n'existe pas";}
        }  //Fin Else
       ?>
 
+      <?php
+		echo "</br>"."Prix total du panier: ".$PrixTotal;
+		//echo "</br>"."ID1: ".$ID_Produit1;
+		$_SESSION['PrixPanier'] = $PrixTotal;
+		?>
+		<br>
+      <a href="http://localhost/ProjetInfo/Vider.php">Vider le panier</a>
 
         </div>
         <!-- /.row -->
@@ -208,7 +215,7 @@ else{echo "ma base n'existe pas";}
 
 
 
-<form action="http://localhost/ECEbay/Acheter/Achat.php" method="post">
+<form action="http://localhost/ProjetInfo/Acheter/Achat.php" method="post">
 <input type="hidden" name="prix"></input>
 <input type="hidden" name="ID_Produit1" value="<?php $ID_Produit1 ?>"> </input>
 <input type="hidden" name="ID_Produit2"></input>
@@ -217,12 +224,8 @@ else{echo "ma base n'existe pas";}
 <input type="hidden" name="ID_Produit5"></input>
 <td colspan="2" align="center"><input type="submit" value="Acheter"></td> 
 
-<a href="http://localhost/ECEbay/Vider.php">Vider le panier</a>
-<?php
-echo "</br>"."Prix total du panier: ".$PrixTotal;
-//echo "</br>"."ID1: ".$ID_Produit1;
-$_SESSION['PrixPanier'] = $PrixTotal;
-?>
+
+
 
 
 
