@@ -66,6 +66,7 @@
     <a class="dropdown-item" href="http://localhost/ProjetInfo/Connexion/Acheteur.php">Connexion acheteur</a>
     <a class="dropdown-item" href="http://localhost/ProjetInfo/Deconnexion/Deconnexion.php">Deconnexion</a>
     <a class="dropdown-item" href="http://localhost/ProjetInfo/Inscription/Acheteur.php">Créer un compte</a>
+    <a class="dropdown-item" href="http://localhost/ProjetInfo/Panier.php">Mon Panier</a>
   </div>
 </div>
 
