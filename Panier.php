@@ -143,7 +143,7 @@ else{echo "ma base n'existe pas";}
   </head>
   <body>
 
-<?php include("HautDePage.php"); ?>
+<?php include("C:\wamp64\www\ProjetInfo\HautDePage.php"); ?>
 
   <header class="page-header header container-fluid">
   <div class="overlay"></div>
@@ -165,7 +165,7 @@ else{echo "ma base n'existe pas";}
 
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100">
-              <a href="#"><img class="card-img-top" src="tresor1.jpg" alt=""></a>
+              <a href="#"><img class="card-img-top" src="http://localhost/ProjetInfo/tresor1.jpg" alt=""></a>
                   <div class="card-body">
 
                     <h4 class="card-title">
@@ -229,6 +229,6 @@ else{echo "ma base n'existe pas";}
 
 
 
-  <?php include("BasDePage.php"); ?>
+  <?php include("C:\wamp64\www\ProjetInfo\BasDePage.php"); ?>
 
 </html>
