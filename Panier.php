@@ -204,12 +204,12 @@ else{echo "ma base n'existe pas";}
 			<td colspan="2" align="center"><input type="submit" value="Acheter"></td> 
 			<br>
 			<div class="card-footer" action="http://localhost/ProjetInfo/AjoutPanier.php" method="post">
-                <button>Acheter</button>
+                <button>Acheter </button>
              </div>
             <br>
 		    <a href="http://localhost/ProjetInfo/Vider.php">Vider le panier</a>
 	</div>
-	
+
 <?php include("C:\wamp64\www\ProjetInfo\BasDePage.php"); ?>
 
         </div>
