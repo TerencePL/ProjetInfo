@@ -44,6 +44,7 @@ if($db_found)
 				$Produit[$j]['ID']=$ID_Produit1;
 				$Produit[$j]['Nom']= $dataProduit1['Nom']; 
 				$Produit[$j]['Prix']= $dataProduit1['Prix'];
+				$Produit[$j]['Description']= $dataProduit1['Description'];
 				$Produit[$j]['Stock']= $dataProduit1['Stock'];
 				if($Produit[$j]['Stock'] != 0 )
 				$PrixTotal = $PrixTotal + $Produit[$j]['Prix'];
@@ -57,6 +58,7 @@ if($db_found)
 				$Produit[$j]['ID']=$ID_Produit2;
 				$Produit[$j]['Nom']= $dataProduit2['Nom'];
 				$Produit[$j]['Prix']= $dataProduit2['Prix'];
+				$Produit[$j]['Description']= $dataProduit2['Description'];
 				$Produit[$j]['Stock']= $dataProduit2['Stock'];
 				if($Produit[$j]['Stock'] != 0 )
 				$PrixTotal = $PrixTotal + $Produit[$j]['Prix'];
@@ -71,6 +73,7 @@ if($db_found)
 				$Produit[$j]['ID']=$ID_Produit3;
 				$Produit[$j]['Nom']= $dataProduit3['Nom'];
 				$Produit[$j]['Prix']= $dataProduit3['Prix'];
+				$Produit[$j]['Description']= $dataProduit3['Description'];
 				$Produit[$j]['Stock']= $dataProduit3['Stock'];
 				if($Produit[$j]['Stock'] != 0 )
 				$PrixTotal = $PrixTotal + $Produit[$j]['Prix'];
@@ -85,6 +88,7 @@ if($db_found)
 				$Produit[$j]['ID']=$ID_Produit4;
 				$Produit[$j]['Nom']= $dataProduit4['Nom'];
 				$Produit[$j]['Prix']= $dataProduit4['Prix'];
+				$Produit[$j]['Description']= $dataProduit4['Description'];
 				$Produit[$j]['Stock']= $dataProduit4['Stock'];
 				if($Produit[$j]['Stock'] != 0 )
 				$PrixTotal = $PrixTotal + $Produit[$j]['Prix'];
@@ -99,6 +103,7 @@ if($db_found)
 				$Produit[$j]['ID']=$ID_Produit5;
 				$Produit[$j]['Nom']= $dataProduit5['Nom'];
 				$Produit[$j]['Prix']= $dataProduit5['Prix'];
+				$Produit[$j]['Description']= $dataProduit5['Description'];
 				$Produit[$j]['Stock']= $dataProduit5['Stock'];
 				if($Produit[$j]['Stock'] != 0 )
 				$PrixTotal = $PrixTotal + $Produit[$j]['Prix'];
@@ -120,87 +125,107 @@ else{echo "ma base n'existe pas";}
 
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8" />
-		<link rel="stylesheet" type="text/css" href="Style.css" />
-		<title>ECEbay</title>
-	</head>
-	<body>
-		<header>
-			<nav>
-				<ul>
-					<li >
-						<img src="Images/menu.jpg">
-						<ul class="l2">
-							<li><a href="http://localhost/ECEbay/Categories.php">Catégories</a></li>
-							<li><a href="http://localhost/ECEbay/VentesFlash.php" title="Accéder aux ventes flash">Ventes flash</a></li>
-							<li><a href="http://localhost/ECEbay/Vendre.php" title="Accéder à la vente">Vendre</a></li>
-							<li><a href="http://localhost/ECEbay/Compte.php" title="Accéder à votre compte">Votre compte</a></li>
-							<li><a href="http://localhost/ECEbay/Panier.php" title="Accéder au panier">Panier</a></li>
-							<li><a href="http://localhost/ECEbay/Admin.php" title="Espace réservé aux admins">Admin</a></li>
-							<li><a href="http://localhost/ECEbay/Connexion.php" title="Connexion">Connexion</a></li>
-							<li><a href="http://localhost/ECEbay/Deconnexion.php" title="Deconnexion">Deconnexion</a></li>
-						</ul>
-					</li>
-				</ul>
-			</nav>
-			<div id="nom">
-				<h1>ECEbay</h1>
-			</div>
-			<div id="connexion">
-				<a href="#" title="Compte" id="connex"><img src="Images/login.jpg"></a>
-			</div>
-		</header>
+ <head>
+  <title>Page Principale</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet"
+   href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="C:\wamp64\www\ProjetInfo\PagePrincipaleEbay.css">
+  <script type="text/javascript">
+   $(document).ready(function(){
+   $('.header').height($(window).height());
+   });
+  </script>
 
+  </head>
+  <body>
+
+<?php include("HautDePage.php"); ?>
+
+  <header class="page-header header container-fluid">
+    <div class="overlay"></div>
+    <div class="overlay"></div>
+  <div class="description">
+   <h1> Bienvenue sur le Site EBAY ECE </h1>
 		<div id="corps">
 			
-			<?php
-				if($NbArticles==0)
-					{echo "Panier vide.";}
-				else {for($i = 1; $i <= $NbArticles; $i++)
-					{
-						?>
-						<article><?php echo 'Article '.$i;
-								//echo $ID['1'].'</br>';
-								echo "</br> ID: ".$Produit[$i]['ID'].'</br>';
-								echo "Nom: ".$Produit[$i]['Nom'].'</br>';
-								echo "Prix: ".$Produit[$i]['Prix'].'</br>';
-								echo "Stock: ".$Produit[$i]['Stock'].'</br> </br> ';
 
-								?>
-						</article>
-							<?php
-							}
-						
-						echo "</br>"."Prix total du panier: ".$PrixTotal;
-						//echo "</br>"."ID1: ".$ID_Produit1;
-						$_SESSION['PrixPanier'] = $PrixTotal;
-						?>
-
-						<form action="http://localhost/ECEbay/Acheter/Achat.php" method="post">
-						<input type="hidden" name="prix"></input>
-						<input type="hidden" name="ID_Produit1" value="<?php $ID_Produit1 ?>"> </input>
-						<input type="hidden" name="ID_Produit2"></input>
-						<input type="hidden" name="ID_Produit3"></input>
-						<input type="hidden" name="ID_Produit4"></input>
-						<input type="hidden" name="ID_Produit5"></input>
-						<td colspan="2" align="center"><input type="submit" value="Acheter"></td> <?php } ?>
-
-						<a href="http://localhost/ECEbay/Vider.php">Vider le panier</a>
+      <?php       
+      // ________________Boucle qui parcoure le nombre de produits en vente de la categorie___________________
+      if($NbArticles==0)
+		{echo "Panier vide.";}
+		else{
+		for($i = 1; $i <= $NbArticles; $i++)
+        {
+          ?>
 
 
-		</div>
-		
-		<footer>
-			<small>
-				<p>
-					<a href="#"> Terms </a>  | <a href="#"> Privacy </a>  | 
-					<a href="#"> Security </a>  | <a href="#"> Help </a>  | 
-					<a href="#"> Blog </a>  | <a href="#"> About </a>  | 
-					<a href="mailto:ECEbay@gmail.com">Contact us</a><br>
-					Droits d'auteur : Copyright &copy; 2019, ECEbay, Inc. | Paris, FRANCE
-				</p>
-			</small>
-		</footer>
-	</body>
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100">
+              <a href="#"><img class="card-img-top" src="tresor1.jpg" alt=""></a>
+                  <div class="card-body">
+
+                    <h4 class="card-title">
+                      <a href="#"> <?php echo "Nom: ".$Produit[$i]['Nom'].'</br>'; ?> </a>
+                    </h4>
+
+                    <h5>  <?php echo "Description: ".$Produit[$i]['Description'].'</br>'; ?>  </h5>
+                    <h5>  <?php echo "$".$Produit[$i]['Prix'].'</br>'; ?> </h5>
+                    <h5>  <?php echo "Stock: ".$Produit[$i]['Stock'].'</br> </br> '; ?> </h5>
+                  </div>
+
+              <div class="card-footer" action="http://localhost/ProjetInfo/AjoutPanier.php" method="post">
+                <button>Acheter</button>
+              </div>
+            </div>
+          </div>
+
+
+
+        <?php
+        }  //______________________________________Fin de la boucle________________________________
+       }  //Fin Else
+      ?>
+
+
+        </div>
+        <!-- /.row -->
+
+      </div>
+      <!-- /.col-lg-9 -->
+
+    </div>
+    <!-- /.row -->
+
+  </div>
+  <!-- /.container -->
+
+</div>
+
+
+
+
+<form action="http://localhost/ECEbay/Acheter/Achat.php" method="post">
+<input type="hidden" name="prix"></input>
+<input type="hidden" name="ID_Produit1" value="<?php $ID_Produit1 ?>"> </input>
+<input type="hidden" name="ID_Produit2"></input>
+<input type="hidden" name="ID_Produit3"></input>
+<input type="hidden" name="ID_Produit4"></input>
+<input type="hidden" name="ID_Produit5"></input>
+<td colspan="2" align="center"><input type="submit" value="Acheter"></td> 
+
+<a href="http://localhost/ECEbay/Vider.php">Vider le panier</a>
+<?php
+echo "</br>"."Prix total du panier: ".$PrixTotal;
+//echo "</br>"."ID1: ".$ID_Produit1;
+$_SESSION['PrixPanier'] = $PrixTotal;
+?>
+
+
+
+  <?php include("BasDePage.php"); ?>
+
 </html>

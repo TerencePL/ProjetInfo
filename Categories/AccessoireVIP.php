@@ -115,7 +115,7 @@ else{echo "ma base n'existe pas";}
 
       <?php       
       // ________________Boucle qui parcoure le nombre de produits en vente de la categorie___________________
-        for($i = 1; $i <= $NbArticles; $i++)
+      for($i = 1; $i <= $NbArticles; $i++)
         {
           ?>
 
@@ -147,11 +147,6 @@ else{echo "ma base n'existe pas";}
       ?>
 
 
-         
-
-
-
-
         </div>
         <!-- /.row -->
 
@@ -163,6 +158,9 @@ else{echo "ma base n'existe pas";}
 
   </div>
   <!-- /.container -->
+
+
+
  <?php include("C:\wamp64\www\ProjetInfo\BasDePage.php"); ?>
 </body>
 
