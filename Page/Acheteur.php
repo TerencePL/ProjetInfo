@@ -1,6 +1,5 @@
   <?php
   session_start();
-  $_SESSION['ID']=2;
   ?>
 
     <!DOCTYPE html>
@@ -30,24 +29,25 @@
       <div class="overlay"></div>
          <div class="description">
 
-        <?php //**************************[[A REMPLACER PAR DU TEXTE SI PERSONNE N'EST CONNECTE]]****************************** ?>
+        <?php //**************************[[A REMPLACER PAR DU TEXTE SI PERSONNE N'EST CONNECTE]]****************************** 
 
-   
-            <h1><font size="8pt"><B>Bienvenue <?php // recupération des infos du compte connecté depuis la BDD via son ID
                 $database = "ebayece";
-
                 $db_handle = mysqli_connect('localhost', 'root', '');
                 $db_found = mysqli_select_db($db_handle, $database);
+          ?>
+   
+            <h1><font size="8pt"><B>Bienvenue: <?php // recupération des infos du compte connecté depuis la BDD via son ID
 
 
-                if(isset($_SESSION['ID']))
+                //Verification si une session est bien ouverte (si qlqun est connecté)
+                if(isset($_SESSION['ID']))  
                   {$ID=$_SESSION['ID'];
 
-                $result = mysqli_query($db_handle,"SELECT * FROM vendeur WHERE ID_Vendeur LIKE '$ID'");
-                $resultat = mysqli_query($db_handle,"SELECT * FROM acheteur WHERE ID LIKE '$ID'");
-                $row = mysqli_fetch_array($result);
-                $row_ = mysqli_fetch_array($resultat);
-                }
+                  $result = mysqli_query($db_handle,"SELECT * FROM vendeur WHERE ID_Vendeur LIKE '$ID'");
+                  $resultat = mysqli_query($db_handle,"SELECT * FROM acheteur WHERE ID LIKE '$ID'");
+                  $row = mysqli_fetch_array($result);
+                  $row_ = mysqli_fetch_array($resultat);
+                
               ?>
 
 
@@ -56,7 +56,9 @@
                   <li style="color:white"> <font size="+3"> <?php if(isset($_SESSION['ID'])) {echo "".$row_['Prenom'];}?><?php if(isset($_SESSION['ID'])) {echo " ".$row_['Nom'];} 
                   echo " tu es lié au vendeur <br>".$row['Pseudo'].''.'<br><br>'; 
                   echo '<img src="'.$row['Photo_Adresse'].'" alt=""/>'.'<br>';
-
+                }
+                else   //Si aucune session ouverte
+                  {echo "<br><br> Aucun compte connecté  <br><br>";}
 
                   ?></font> </li> 
                
