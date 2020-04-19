@@ -26,7 +26,7 @@ if($db_found){
 					$_SESSION['ID'] = $ID_Connexion; //Mise de l'ID connecté en variable de session
 
 					// PENSEZ A REMPLACER LA LIGNE SUIVANTE PAR LA PAGE D ACCUEIL REDIRIGE APRES LA CONNEXION //
-					header('Location: http://localhost/ProjetInfo/Connexion/Acheteur.php');
+					header('Location: http://localhost/ProjetInfo/Page/Acheteur.php');
 				}
 		else{
 			// L un des parametres est inccorect

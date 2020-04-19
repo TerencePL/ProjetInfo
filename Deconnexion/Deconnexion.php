@@ -3,6 +3,6 @@
 session_start();
 
 session_destroy();
-header('Location: http://localhost/ProjetInfo/Connexion/Acheteur.php');
+header('Location: http://localhost/ProjetInfo/Page/Acheteur.php');
 
 ?>

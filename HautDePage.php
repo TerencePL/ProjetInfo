@@ -15,9 +15,10 @@
    });
   </script>
 
+
   </head>
   <body><nav class="navbar navbar-expand-md">
-   <a href="http://localhost/ProjetInfo/PagePrincipaleEbay.php"><img src="ECEBay3.png" class="img-fluid"></a>
+   <a href="http://localhost/ProjetInfo/PagePrincipaleEbay.php"><img src="http://localhost/ProjetInfo/ECEBay3.png" class="img-fluid"></a>
    <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#main-navigation">
    <span class="navbar-toggler-icon"></span>
    </button>
@@ -62,11 +63,20 @@
     Votre Compte
   </button>
   <div class="dropdown-menu">
-    <a class="dropdown-item" href="http://localhost/ProjetInfo/Page/Acheteur.php">Mon compte acheteur</a>
-    <a class="dropdown-item" href="http://localhost/ProjetInfo/Connexion/Acheteur.php">Connexion acheteur</a>
+     <?php if(isset($_SESSION['ID']))  
+                  { ?>
+    <a class="dropdown-item" href="http://localhost/ProjetInfo/Page/Acheteur.php">Mon compte</a>
     <a class="dropdown-item" href="http://localhost/ProjetInfo/Deconnexion/Deconnexion.php">Deconnexion</a>
-    <a class="dropdown-item" href="http://localhost/ProjetInfo/Inscription/Acheteur.php">Créer un compte</a>
     <a class="dropdown-item" href="http://localhost/ProjetInfo/Panier.php">Mon Panier</a>
+    <?php 
+    }
+    else{
+    ?>
+
+    <a class="dropdown-item" href="http://localhost/ProjetInfo/Connexion/Acheteur.php">Connexion</a>
+    <a class="dropdown-item" href="http://localhost/ProjetInfo/Inscription/Acheteur.php">Créer un compte</a>
+  <?php } ?>
+
   </div>
 </div>
 
@@ -90,8 +100,6 @@
 </div>
 </div>
 </nav>
-
-
-  </body>
+</body>
 
   </html>

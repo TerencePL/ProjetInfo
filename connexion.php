@@ -23,11 +23,10 @@ session_start();
 </head>
 
 <body style="background-image:url('http://localhost/ProjetInfo/imagesnoir.jpg')">
-<header >
-    <div id="container">
+<div id="container">
             <!-- zone de connexion -->
             
-            <form action="http://localhost/ProjetInfo/Connexion/AcheteurB.php" method="post">
+             <form action="http://localhost/ProjetInfo/Connexion/AcheteurB.php" method="post">
                 <h1 align="center">Connexion</h1>
                 
                 <label><b>Mail</b></label>
@@ -41,12 +40,15 @@ session_start();
                 <label><b>Vous n'etes pas encore inscrit ?</b></label>
                 <input type="submit" id='Inscription' value='Inscription' >
 
+                <label><b>Vous etes un autre utilisateur ?</b></label>
+                <form action="connexionAdministrateur.php>">
+                <input type="submit" id='connectAdmin' value='Se connecter en Administrateur' >
+                </form>
+
             </form>
         </div>
 
-    <br>
-</header>
-
+<?php include("C:\wamp64\www\ProjetInfo\BasDePage.php"); ?>
 
 </body>
 </html>

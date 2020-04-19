@@ -54,7 +54,7 @@
                 <ul>
                   
                   <li style="color:white"> <font size="+3"> <?php if(isset($_SESSION['ID'])) {echo "".$row_['Prenom'];}?><?php if(isset($_SESSION['ID'])) {echo " ".$row_['Nom'];} 
-                  echo " tu es lié au vendeur <br>".$row['Pseudo'].''.'<br><br>'; 
+                  echo " <br> Tu es lié au compte vendeur: <br>".$row['Pseudo'].''.'<br><br>'; 
                   echo '<img src="'.$row['Photo_Adresse'].'" alt=""/>'.'<br>';
                 }
                 else   //Si aucune session ouverte
