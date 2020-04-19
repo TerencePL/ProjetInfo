@@ -63,11 +63,11 @@
     Votre Compte
   </button>
   <div class="dropdown-menu">
-     <?php if(isset($_SESSION['ID']))  
+     <?php if(isset($_SESSION['ID']))  //Variation du menu depandant de si un utilisateur est connecté ou non
                   { ?>
     <a class="dropdown-item" href="http://localhost/ProjetInfo/Page/Acheteur.php">Mon compte</a>
-    <a class="dropdown-item" href="http://localhost/ProjetInfo/Deconnexion/Deconnexion.php">Deconnexion</a>
     <a class="dropdown-item" href="http://localhost/ProjetInfo/Panier.php">Mon Panier</a>
+    <a class="dropdown-item" href="http://localhost/ProjetInfo/Deconnexion/Deconnexion.php">Deconnexion</a>
     <?php 
     }
     else{
@@ -80,7 +80,8 @@
   </div>
 </div>
 
-
+   <?php if(isset($_SESSION['ID'])==False)  
+                  { }?>
 <div class="dropdown">
   <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown">
     Panier
