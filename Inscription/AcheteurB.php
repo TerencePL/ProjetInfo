@@ -47,12 +47,10 @@ else
 
 if($Verif==0)
 {
+		//Création du compte acheteur
 		$bdd = new PDO("mysql:host=localhost;dbname=$dbname;charset=UTF8", $db_login, $db_pass);
 		$sql = "INSERT INTO `acheteur`(`ID`, `Mail`, `MDP`, `Nom`, `Prenom`, `Adresse`, `Ville`, `Postal`, `Pays`, `Telephone`, `Solde`)  VALUES('$ID','$Mail','$MDP','$Nom','$Prenom','$Adresse','$Ville','$Postal','$Pays','$Telephone','$Solde')"; 
 
-
-		//";
-		//$sql .= "
 	
 		$bdd->query($sql);
 
@@ -61,9 +59,20 @@ if($Verif==0)
 		$ID_User=$row['ID'];
 		echo $ID_User;
 
+		//Création du panier associé
 		$bdd = new PDO("mysql:host=localhost;dbname=$dbname;charset=UTF8", $db_login, $db_pass);
 		$sql = "INSERT INTO panier (ID_User, ID_Produit1, ID_Produit2, ID_Produit3, ID_Produit4, ID_Produit5) VALUES('$ID_User', '0', '0', '0', '0', '0' )";
 		$bdd->query($sql);
+
+
+		//Création du compte vendeur
+		$bdd = new PDO("mysql:host=localhost;dbname=$dbname;charset=UTF8", $db_login, $db_pass);
+		$sql = "INSERT INTO vendeur (ID_Vendeur, Pseudo, Mail, Photo_adresse, Fond_Adresse, Solde,MDP) VALUES('$ID_User', '', '$Mail','' , '', '0', '$MDP' )";
+		$bdd->query($sql);
+
+
+
+
 
 		header('Location: http://localhost/ProjetInfo/Inscription/Acheteur.php');
 

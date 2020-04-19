@@ -28,7 +28,7 @@ session_start();
   <div class="overlay"></div>
   <div class="overlay"></div>
   <div class="description">
-          <h1> Inscription Acheteur: </h1>
+          <h1> Inscription: </h1>
         <div id="corps">
       <form action="http://localhost/ProjetInfo/Inscription/AcheteurB.php" method="post">
       <table>
