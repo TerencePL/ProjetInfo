@@ -45,6 +45,7 @@
      <?php if(isset($_SESSION['ID']))  //Variation du menu depandant de si un utilisateur est connecté ou non
                   { ?>
     <a class="dropdown-item" href="http://localhost/ProjetInfo/Page/Acheteur.php">Mon compte</a>
+    <a class="dropdown-item" href="http://localhost/ProjetInfo/Page/Vendeur.php">Mon magasin</a>
     <a class="dropdown-item" href="http://localhost/ProjetInfo/Panier.php">Mon Panier</a>
     <a class="dropdown-item" href="http://localhost/ProjetInfo/Deconnexion/Deconnexion.php">Deconnexion</a>
     <?php 
@@ -59,18 +60,20 @@
   </div>
 </div>
 
-   <?php if(isset($_SESSION['ID'])==False)  
-                  { }?>
-
-
+   <?php if(isset($_SESSION['ID']))  
+                  { //Mise en vente possible qu'en etant connecté
+                    ?>
 <div class="dropdown">
   <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown">
     Vendre
   </button>
   <div class="dropdown-menu">
-    <a class="dropdown-item" href="#">Vendre</a>
+    <a class="dropdown-item" href="http://localhost/ProjetInfo/Vendre/Vente.php">Vendre</a>
   </div>
 </div>
+<?php 
+} // Fin du IF
+?>
 
 
 
