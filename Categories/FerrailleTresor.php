@@ -23,7 +23,6 @@ if($db_found)
       $IDBis[$j] = $data2['ID_Produit'];
       $Nom[$j] = $data2['Nom'];
       $Prix[$j] = $data2['Prix'].'</br>';
-
       $Description[$j] = $data2['Description'];
       $Stock[$j] = $data2['Stock'];
 

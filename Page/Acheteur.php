@@ -55,7 +55,7 @@
                   
                   <li style="color:white"> <font size="+3"> <?php if(isset($_SESSION['ID'])) {echo "".$row_['Prenom'];}?><?php if(isset($_SESSION['ID'])) {echo " ".$row_['Nom'];} 
                   //echo " <br> Tu es lié au compte vendeur: <br>".$row['Pseudo'].''.'<br><br>'; 
-                  echo '<br> Tu es lié au compte vendeur: <br> <a href="http://localhost/ProjetInfo/Page/Vendeur.php" title="Vendeur" style="color:blue"><font size="+3">'.$row['Pseudo'].' </font></a></B></font></h1>';
+                  echo '<br> Tu es lié au compte vendeur:<br><a href="http://localhost/ProjetInfo/Page/Vendeur.php" title="Vendeur" style="color:red"><font size="+3">'.$row['Pseudo'].' </font></a></B></font></h1>';
                   echo '<img src="'.$row['Photo_Adresse'].'" alt=""/>'.'<br>';
 
 

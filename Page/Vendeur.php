@@ -1,6 +1,42 @@
   <?php
   session_start();
-  ?>
+  
+$database = "ebayece";
+
+$db_handle = mysqli_connect('localhost', 'root', '');
+$db_found = mysqli_select_db($db_handle, $database);
+$j=0;
+
+$ID=$_SESSION['ID']; //On recupère l'ID de session ATTENTION cette valeur est changé dans la boucle
+$NbArticles=0;
+
+//si le BDD existe, faire le traitement. Trouver les ID des livres
+if($db_found) 
+{
+  $result = mysqli_query($db_handle, "SELECT * FROM produit WHERE ID_Vendeur = '$ID' ORDER BY Categorie");
+  while($data = mysqli_fetch_assoc($result)) 
+  {
+    $ID=$data['ID_Produit'];
+    
+    $resultBIS = mysqli_query($db_handle, "SELECT * FROM produit Where ID_Produit like '$ID'");
+    while($data2 = mysqli_fetch_assoc($resultBIS)) 
+    {
+      $j=$j+1;
+
+      $IDBis[$j] = $data2['ID_Produit'];
+      $Nom[$j] = $data2['Nom'];
+      $Prix[$j] = $data2['Prix'].'</br>';
+
+      $Description[$j] = $data2['Description'];
+      $Stock[$j] = $data2['Stock'];
+    }//end while 
+    echo '</br>';
+    $NbArticles=$j;
+  }//end while 
+}//endif
+else{echo "ma base n'existe pas";}
+
+?>  
 
     <!DOCTYPE html>
     <html>
@@ -68,7 +104,45 @@
                 </li> 
                
                       
-                </ul>  
+                </ul>
+
+
+
+      <?php       
+      // ________________Boucle qui parcoure le nombre de produits en vente de la categorie___________________
+        for($i = 1; $i <= $NbArticles; $i++)
+        {
+          ?>
+
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100">
+              <a href="#"><img class="card-img-top" src="http://localhost/ProjetInfo/ImagesProduits/tresor1.jpg" alt=""></a>
+                  <div class="card-body">
+
+                    <h4 class="card-title">
+                      <a href="#"> <?php echo "".$Nom[$i].'</br>'; ?> </a>
+                    </h4>
+
+                    <h5>  <?php echo "Description: ".$Description[$i].'</br>'; ?>  </h5>
+                    <h5>  <?php echo "$".$Prix[$i]; ?> </h5>
+                    <h5>  <?php echo "Sotck: ".$Stock[$i]; ?> </h5>
+                  </div>
+
+                  <form action="http://localhost/ProjetInfo/AjoutPanier.php" method="post">
+                    <td colspan="2" align="right"><input type="submit" value="Ajouter au panier" />
+                    <input type="hidden" name="ID_Produit" value='<?php echo $IDBis[$i]?>' /></td>
+                  </form>
+
+              </div>
+            </div>
+          </div>
+
+
+
+        <?php
+        }   //______________________________________Fin de la boucle________________________________
+      ?>  
 
 
 
