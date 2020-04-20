@@ -37,27 +37,6 @@
   </div>
 </div>
 
-
-<div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown">
-    Achat
-  </button>
-  <div class="dropdown-menu">
-    <a class="dropdown-item" href="#">Enchères</a>
-    <a class="dropdown-item" href="#">Acheter Maintenant</a>
-    <a class="dropdown-item" href="#">Meilleure Offre</a>
-  </div>
-</div>
-
-<div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown">
-    Vendre
-  </button>
-  <div class="dropdown-menu">
-    <a class="dropdown-item" href="#">Vendre</a>
-  </div>
-</div>
-
 <div class="dropdown">
   <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown">
     Votre Compte
@@ -82,24 +61,19 @@
 
    <?php if(isset($_SESSION['ID'])==False)  
                   { }?>
+
+
 <div class="dropdown">
   <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown">
-    Panier
+    Vendre
   </button>
   <div class="dropdown-menu">
-    <a class="dropdown-item" href="#">Panier</a>
+    <a class="dropdown-item" href="#">Vendre</a>
   </div>
 </div>
 
-<div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown">
-    Administrateur
-  </button>
-  <div class="dropdown-menu">
-    <a class="dropdown-item" href="#">Administrateur</a>
 
-</div>
-</div>
+
 </nav>
 </body>
 

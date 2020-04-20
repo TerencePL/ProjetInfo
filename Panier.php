@@ -150,8 +150,9 @@ else{echo "ma base n'existe pas";}
   <div class="overlay"></div>
   <div class="description">
    <h1> Panier </h1>
+
 		<div id="corps">
-			
+
 
       <?php       
       // ________________Boucle qui parcoure le nombre de produits dans le panier___________________
@@ -165,7 +166,7 @@ else{echo "ma base n'existe pas";}
 
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100">
-              <a href="#"><img class="card-img-top" src="http://localhost/ProjetInfo/tresor1.jpg" alt=""></a>
+              <a href="#"><img class="card-img-top" src="http://localhost/ProjetInfo/ImagesProduits/tresor1.jpg" alt=""></a>
                   <div class="card-body">
 
                     <h4 class="card-title">
@@ -200,14 +201,16 @@ else{echo "ma base n'existe pas";}
 			?>
 			<br>
 
-			<form action="http://localhost/ProjetInfo/Acheter/Achat.php" method="post">
+			<form action="http://localhost/ProjetInfo/Acheter.php" method="post">
 			<td colspan="2" align="center"><input type="submit" value="Acheter"></td> 
-			<br>
-			<div class="card-footer" action="http://localhost/ProjetInfo/AjoutPanier.php" method="post">
-                <button>Acheter </button>
-             </div>
-            <br>
-		    <a href="http://localhost/ProjetInfo/Vider.php">Vider le panier</a>
+			</form>			
+
+
+            <form action="http://localhost/ProjetInfo/Vider.php">
+			<td colspan="2" align="center">
+				<input type="submit" value="Vider le panier"></td> 
+			</form>
+
 	</div>
 
 <?php include("C:\wamp64\www\ProjetInfo\BasDePage.php"); ?>

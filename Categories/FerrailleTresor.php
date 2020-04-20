@@ -23,7 +23,6 @@ if($db_found)
       $IDBis[$j] = $data2['ID_Produit'];
       $Nom[$j] = $data2['Nom'];
       $Prix[$j] = $data2['Prix'].'</br>';
-
       $Description[$j] = $data2['Description'];
       $Stock[$j] = $data2['Stock'];
 
@@ -87,13 +86,13 @@ else{echo "ma base n'existe pas";}
           </ol>
           <div class="carousel-inner" role="listbox">
             <div class="carousel-item active">
-              <img class="d-block img-fluid" src="tresor1.jpg" alt="First slide">
+              <img class="d-block img-fluid" src="http://localhost/ProjetInfo/tresor1.jpg" alt="First slide">
             </div>
             <div class="carousel-item">
-              <img class="d-block img-fluid" src="tresor2.jpg" alt="Second slide">
+              <img class="d-block img-fluid" src="http://localhost/ProjetInfo/tresor2.jpg" alt="Second slide">
             </div>
             <div class="carousel-item">
-              <img class="d-block img-fluid" src="tresor3.jpg" alt="Third slide">
+              <img class="d-block img-fluid" src="http://localhost/ProjetInfo/tresor3.jpg" alt="Third slide">
             </div>
           </div>
           <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev" style="color: black">
@@ -121,7 +120,7 @@ else{echo "ma base n'existe pas";}
 
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100">
-              <a href="#"><img class="card-img-top" src="tresor1.jpg" alt=""></a>
+              <a href="#"><img class="card-img-top" src="http://localhost/ProjetInfo/ImagesProduits/tresor1.jpg" alt=""></a>
                   <div class="card-body">
 
                     <h4 class="card-title">
@@ -133,8 +132,11 @@ else{echo "ma base n'existe pas";}
                     <h5>  <?php echo "Sotck: ".$Stock[$i]; ?> </h5>
                   </div>
 
-              <div class="card-footer" action="http://localhost/ProjetInfo/AjoutPanier.php" method="post">
-              <button>Ajouter au panier</button>
+                  <form action="http://localhost/ProjetInfo/AjoutPanier.php" method="post">
+                    <td colspan="2" align="right"><input type="submit" value="Ajouter au panier" />
+                    <input type="hidden" name="ID_Produit" value='<?php echo $IDBis[$i]?>' /></td>
+                  </form>
+
               </div>
             </div>
           </div>
