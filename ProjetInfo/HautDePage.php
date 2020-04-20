@@ -17,8 +17,7 @@
 
   </head>
   <body><nav class="navbar navbar-expand-md">
-   <img src="ECEBay3.png" class="img-fluid">
-  <a class="navbar-brand" href="#">EBAY ECE</a>
+   <a href="PagePrincipaleEbay.php"><img src="ECEBay3.png" class="img-fluid"></a>
    <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#main-navigation">
    <span class="navbar-toggler-icon"></span>
    </button>
@@ -30,9 +29,10 @@
     Catégorie
   </button>
   <div class="dropdown-menu">
-    <a class="dropdown-item" href="#">Ferraille ou Trésor</a>
-    <a class="dropdown-item" href="#">Bon pour le Musée</a>
-    <a class="dropdown-item" href="#">Accessoire VIP</a>
+    
+    <a class="dropdown-item" href="FerrailleTresor.php">Ferraille ou Trésor</a>
+    <a class="dropdown-item" href="BonMusee.php">Bon pour le Musée</a>
+    <a class="dropdown-item" href="AccessoireVIP.php">Accessoire VIP</a>
   </div>
 </div>
 
