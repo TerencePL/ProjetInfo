@@ -120,7 +120,7 @@ else{echo "ma base n'existe pas";}
 
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100">
-              <a href="#"><img class="card-img-top" src='http://localhost/ProjetInfo/ImagesProduits/<?php echo $IDBis[$i];?>.jpg' alt=""></a>
+              <a href="#"><img class="card-img-top" src='http://localhost/ProjetInfo/Vendre/ImagesProduits/<?php echo $IDBis[$i];?>.jpg' alt=""></a>
                   <div class="card-body">
 
                     <h4 class="card-title">
