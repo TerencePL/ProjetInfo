@@ -89,7 +89,10 @@ else{echo "ma base n'existe pas";}
                     <?php if(isset($_SESSION['ID'])) {}?>
                     <?php if(isset($_SESSION['ID'])) {} 
                       echo $row['Pseudo'].''.'<br><br>'; 
-                      echo '<img src="'.$row['Photo_Adresse'].'" alt=""/>'.'<br>';?>
+                      echo 'Solde: '.$row['Solde'].''.'<br><br>'; 
+                      echo '<img src="'.$row['Photo_Adresse'].'" alt=""/>'.'<br>';
+
+                    ?>
                     </li>     
                 </ul>
                 <?php
