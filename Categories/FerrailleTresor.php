@@ -25,6 +25,7 @@ if($db_found)
       $Prix[$j] = $data2['Prix'].'</br>';
       $Description[$j] = $data2['Description'];
       $Stock[$j] = $data2['Stock'];
+      $EnchereBis[$j] = $data2['EnchereBis'];
 
       //$Sport[$j] = $data['Sport'];
 
@@ -130,6 +131,7 @@ else{echo "ma base n'existe pas";}
                     <h5>  <?php echo "Description: ".$Description[$i].'</br>'; ?>  </h5>
                     <h5>  <?php echo "$".$Prix[$i]; ?> </h5>
                     <h5>  <?php echo "Sotck: ".$Stock[$i]; ?> </h5>
+                    <h5>  <?php echo "Meilleur enchère: $".$EnchereBis[$i]; ?> </h5>
                   </div>
 
                   <form action="http://localhost/ProjetInfo/AjoutPanier.php" method="post">

@@ -14,7 +14,10 @@ $ID_Produit = isset($_POST["ID_Produit"])? $_POST["ID_Produit"] : "";
 //echo "id du produit" .$ID_Produit;
 $ID_User=$_SESSION['ID'];
 
-if(isset($_SESSION['ID']))  
+
+if($db_found) 
+{
+	if(isset($_SESSION['ID']))  
                   {$ID=$_SESSION['ID'];
 
                   	$result = mysqli_query($db_handle,"SELECT * FROM produit WHERE ID_Produit LIKE '$ID_Produit'");
@@ -42,4 +45,9 @@ if(isset($_SESSION['ID']))
 				<?php
      			}
      			else{echo "Erreur pas de session ouverte.";}
-     		?>
+
+     	}
+     	else{echo "BDD introuvable";}
+
+
+?>
