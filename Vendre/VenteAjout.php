@@ -31,29 +31,40 @@ $Categorie =  isset($_POST["genre"]) ? $_POST["genre"]:"";
 $Description = isset($_POST["description"]) ? $_POST["description"]:"";
 
 
+$Verif=0;
 
-if (($_FILES['my_file']['name']!="")){
-// Where the file is going to be stored
-	$target_dir = "http://localhost/ProjetInfo/ImagesProduits";
-	$file = $_FILES['my_file']['name'];
-	$path = pathinfo($file);
-	$filename = $path['filename'];
-	$ext = $path['extension'];
-	$temp_name = $_FILES['my_file']['tmp_name'];
-	$path_filename_ext = $target_dir.$filename.".".$ext;
- 
-// Check if file already exists
-if (file_exists($path_filename_ext)) {
- echo "Sorry, file already exists.";
- }else{
- move_uploaded_file($temp_name,$path_filename_ext);
- echo "Congratulations! File Uploaded Successfully.";
- }
+if(isset($_POST['submit'])) {
+	$file = $_FILES['file'];
+
+	$fileName = $_FILES['file']['name'];
+	$fileTmpName = $_FILES['file']['tmp_name'];
+	$fileSize = $_FILES['file']['size'];
+	$fileError = $_FILES['file']['error'];
+	$fileType = $_FILES['file']['type'];
+
+	$fileExt= explode('.', $fileName);
+	$fileActualExt = strtolower(end($fileExt));
+
+
+	$allowed = array('jpg','jpeg','png');
+
+	if (in_array($fileActualExt,$allowed)){
+		if($fileError===0){
+			if($fileSize < 10000000){
+				$fileNameNew = $ID_Produit.".".$fileActualExt;
+				$fileDestination = 'ImagesProduits/'.$fileNameNew;
+				move_uploaded_file($fileTmpName, $fileDestination);
+				//header("location: index.php?success");
+
+			}
+			else{echo "fichier trop lourd";}
+		}
+		else{echo"Erreur";}
+	}
+ 	else{echo "File extension incorrect";}
 }
 
 
-
-$Verif=0;
 
 
 //inserer dans la table produit
@@ -65,11 +76,7 @@ if($Verif==0)
 
 	
 		$bdd->query($sql);
-		
-		//$sql = "INSERT INTO image (ID_Produit, ID_Img, Adresse) VALUES(";
-		//$sql .= "'$ID_Produit', '$Nom','$path_filename_ext' )";
-	
-		//$bdd->query($sql);
+
 		header('Location: http://localhost/ProjetInfo/Page/Vendeur.php');
 }
 else if ($Verif==1)

@@ -41,15 +41,10 @@ session_start(); // On démarre la session AVANT toute chose
        			</tr>
 
 				<tr>
-				<input type="file"  accept="image/*" name="my_file" id="file"  onchange="loadFile(event)" style="display: none;"><br/> <br/>
-				<label for="file" style="cursor: pointer;">Upload Image</label>
-				<img id="output" width="350" />				
+					<input type="file" name="file">
+					<button type="" name="submit">Upload</button>		
 				</tr>
 
-				<tr>
-				<label for="myfile">Selectionner une image: </label>
-				<Input type="file" id="myfile" name="myfile">			
-				</tr>
 
 				<tr>
 					<td colspan="2" align="center"><input type="submit" name="submit" value="Mettre en Vente"></td>
