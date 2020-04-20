@@ -59,18 +59,20 @@
   </div>
 </div>
 
-   <?php if(isset($_SESSION['ID'])==False)  
-                  { }?>
-
-
+   <?php if(isset($_SESSION['ID']))  
+                  { //Mise en vente possible qu'en etant connecté
+                    ?>
 <div class="dropdown">
   <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown">
     Vendre
   </button>
   <div class="dropdown-menu">
-    <a class="dropdown-item" href="#">Vendre</a>
+    <a class="dropdown-item" href="http://localhost/ProjetInfo/Vendre/Vente.php">Vendre</a>
   </div>
 </div>
+<?php 
+} // Fin du IF
+?>
 
 
 

@@ -52,17 +52,5 @@ mysqli_close($db_handle);
 ?>
 
 		</div>
-		
-		<footer>
-			<small>
-				<p>
-					<a href="#"> Terms </a>  | <a href="#"> Privacy </a>  | 
-					<a href="#"> Security </a>  | <a href="#"> Help </a>  | 
-					<a href="#"> Blog </a>  | <a href="#"> About </a>  | 
-					<a href="mailto:ECEbay@gmail.com">Contact us</a><br>
-					Droits d'auteur : Copyright &copy; 2019, ECEbay, Inc. | Paris, FRANCE
-				</p>
-			</small>
-		</footer>
 	</body>
 </html>
