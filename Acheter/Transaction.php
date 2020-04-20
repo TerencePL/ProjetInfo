@@ -83,6 +83,7 @@ if($db_found)
 		$Prix = $data['Prix'];
 		$Stock = $data['Stock'];
 		$ID_Vendeur = $data['ID_Vendeur'];
+
 	}
 }
 

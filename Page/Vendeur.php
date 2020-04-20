@@ -8,7 +8,7 @@ $db_found = mysqli_select_db($db_handle, $database);
 $j=0;
 
 $ID=$_SESSION['ID']; //On recupère l'ID de session ATTENTION cette valeur est changé dans la boucle
-$NbArticles=0;
+$NbArticles=0; // à 0 par defaut
 
 //si le BDD existe, faire le traitement. Trouver les ID des livres
 if($db_found) 
@@ -35,8 +35,7 @@ if($db_found)
   }//end while 
 }//endif
 else{echo "ma base n'existe pas";}
-
-?>  
+?>
 
     <!DOCTYPE html>
     <html>
@@ -63,18 +62,17 @@ else{echo "ma base n'existe pas";}
     <header class="page-header header container-fluid">
       <div class="overlay"></div>
       <div class="overlay"></div>
-         <div class="description">
+      <div class="description">
 
         <?php //**************************[[A REMPLACER PAR DU TEXTE SI PERSONNE N'EST CONNECTE]]****************************** 
-
                 $database = "ebayece";
                 $db_handle = mysqli_connect('localhost', 'root', '');
                 $db_found = mysqli_select_db($db_handle, $database);
           ?>
    
-            <h1><font size="8pt"><B>Bienvenue: <?php // recupération des infos du compte connecté depuis la BDD via son ID
+            <h1><font size="8pt"><B>Bienvenue: 
 
-
+            <?php // recupération des infos du compte connecté depuis la BDD via son ID
                 //Verification si une session est bien ouverte (si qlqun est connecté)
                 if(isset($_SESSION['ID']))  
                   {$ID=$_SESSION['ID'];
@@ -86,36 +84,31 @@ else{echo "ma base n'existe pas";}
                 
               ?>
 
-
                 <ul>
-                  
                   <li style="color:white"> <font size="+3"> 
                     <?php if(isset($_SESSION['ID'])) {}?>
                     <?php if(isset($_SESSION['ID'])) {} 
                       echo $row['Pseudo'].''.'<br><br>'; 
-                      echo '<img src="'.$row['Photo_Adresse'].'" alt=""/>'.'<br>';
+                      echo '<img src="'.$row['Photo_Adresse'].'" alt=""/>'.'<br>';?>
+                    </li>     
+                </ul>
+                <?php
                 }
                 else   //Si aucune session ouverte
                 {echo "<br><br> Aucun compte connecté  <br><br>";}
 
                 ?>
-                    
-                  </font> 
-                </li> 
-               
-                      
-                </ul>
+                </font>
 
-
+          <br>
+          <a href="http://localhost/ProjetInfo/Deconnexion/Deconnexion.php" title="Deconnexion" style="color:red"><font size="+4">Déconnexion </font></a></B></font></h1>
 
       <?php       
       // ________________Boucle qui parcoure le nombre de produits en vente de la categorie___________________
         for($i = 1; $i <= $NbArticles; $i++)
         {
           ?>
-
-
-          <div class="col-lg-4 col-md-6 mb-4">
+          <div class="col-lg-4 col-md-6 mb-1">
             <div class="card h-100">
               <a href="#"><img class="card-img-top" src="http://localhost/ProjetInfo/ImagesProduits/tresor1.jpg" alt=""></a>
                   <div class="card-body">
@@ -136,23 +129,15 @@ else{echo "ma base n'existe pas";}
 
               </div>
             </div>
-          </div>
-
 
 
         <?php
-        }   //______________________________________Fin de la boucle________________________________
+        }   //************Fin de la boucle**************
       ?>  
 
 
 
-
-          <br>
-          <a href="http://localhost/ProjetInfo/Deconnexion/Deconnexion.php" title="Deconnexion" style="color:red"><font size="+4">Déconnexion </font></a></B></font></h1>
-
-      <?php //********************************************************************************************************* ?>
-
-          </div>
+      </div>
     </header>
 
 
