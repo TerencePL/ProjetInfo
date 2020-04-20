@@ -150,7 +150,7 @@ else{echo "ma base n'existe pas";}
   <div class="overlay"></div>
   <div class="description">
    <h1> Panier </h1>
-  
+
 		<div id="corps">
 
 
@@ -201,7 +201,7 @@ else{echo "ma base n'existe pas";}
 			?>
 			<br>
 
-			<form action="http://localhost/ProjetInfo/Acheter/Achat.php" method="post">
+			<form action="http://localhost/ProjetInfo/Acheter.php" method="post">
 			<td colspan="2" align="center"><input type="submit" value="Acheter"></td> 
 			</form>			
 
