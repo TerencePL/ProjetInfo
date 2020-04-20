@@ -8,7 +8,7 @@
    href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="PagePrincipaleEbay.css">
+  <link rel="stylesheet" type="text/css" href="http://localhost/ProjetInfo/PagePrincipaleEbay.css">
   <script type="text/javascript">
    $(document).ready(function(){
    $('.header').height($(window).height());
@@ -17,7 +17,7 @@
 
   </head>
   <body><nav class="navbar navbar-expand-md">
-   <a href="PagePrincipaleEbay.php"><img src="ECEBay3.png" class="img-fluid"></a>
+   <a href="http://localhost/ProjetInfo/PagePrincipaleEbay.php"><img src="http://localhost/ProjetInfo/ECEBay3.png" class="img-fluid"></a>
    <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#main-navigation">
    <span class="navbar-toggler-icon"></span>
    </button>
@@ -30,9 +30,9 @@
   </button>
   <div class="dropdown-menu">
     
-    <a class="dropdown-item" href="FerrailleTresor.php">Ferraille ou Trésor</a>
-    <a class="dropdown-item" href="BonMusee.php">Bon pour le Musée</a>
-    <a class="dropdown-item" href="AccessoireVIP.php">Accessoire VIP</a>
+    <a class="dropdown-item" href="http://localhost/ProjetInfo/FerrailleTresor.php">Ferraille ou Trésor</a>
+    <a class="dropdown-item" href="http://localhost/ProjetInfo/BonMusee.php">Bon pour le Musée</a>
+    <a class="dropdown-item" href="http://localhost/ProjetInfo/AccessoireVIP.php">Accessoire VIP</a>
   </div>
 </div>
 
@@ -62,8 +62,8 @@
     Votre Compte
   </button>
   <div class="dropdown-menu">
-    <a class="dropdown-item" href="#">Votre Compte</a>
-  </div>
+    <a class="dropdown-item" href="#">Connexion</a>
+    <a class="dropdown-item" href="http://localhost/ProjetInfo/Inscription/Acheteur.php">Créer un compte</a>  </div>
 </div>
 
 
