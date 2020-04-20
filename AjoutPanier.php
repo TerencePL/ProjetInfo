@@ -22,7 +22,7 @@ $j=0;
 
 
 //TEST
-$ID_Produit = 1;
+//$ID_Produit = 1;
 
 
 
