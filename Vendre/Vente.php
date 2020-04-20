@@ -10,7 +10,8 @@ session_start(); // On démarre la session AVANT toute chose
 </head>
 
 	<body>
-
+		  <?php include("C:\wamp64\www\ProjetInfo\HautDePage.php"); ?>
+<center>
 		<form action="http://localhost/ProjetInfo/Vendre/VenteAjout.php" method="post" enctype="multipart/form-data">
 			<table>
 				<tr>
@@ -41,8 +42,7 @@ session_start(); // On démarre la session AVANT toute chose
        			</tr>
 
 				<tr>
-					<input type="file" name="file">
-					<button type="" name="submit">Upload</button>		
+					<input type="file" name="file">					
 				</tr>
 
 
@@ -58,7 +58,8 @@ var loadFile = function(event) {
 	image.src = URL.createObjectURL(event.target.files[0]);
 	var fileName = input.files[0].name; 
 };
-</script>
+</script></center>
+  <?php include("C:\wamp64\www\ProjetInfo\BasDePage.php"); ?>
 	</body>
 </html>
 

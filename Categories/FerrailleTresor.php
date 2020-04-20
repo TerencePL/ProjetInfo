@@ -86,13 +86,13 @@ else{echo "ma base n'existe pas";}
           </ol>
           <div class="carousel-inner" role="listbox">
             <div class="carousel-item active">
-              <img class="d-block img-fluid" src="http://localhost/ProjetInfo/tresor1.jpg" alt="First slide">
+              <img class="d-block img-fluid" src="http://localhost/ProjetInfo/Vendre/ImagesProduits/1.jpg" alt="First slide">
             </div>
             <div class="carousel-item">
-              <img class="d-block img-fluid" src="http://localhost/ProjetInfo/tresor2.jpg" alt="Second slide">
+              <img class="d-block img-fluid" src="http://localhost/ProjetInfo/Vendre/ImagesProduits/2.jpg" alt="Second slide">
             </div>
             <div class="carousel-item">
-              <img class="d-block img-fluid" src="http://localhost/ProjetInfo/tresor3.jpg" alt="Third slide">
+              <img class="d-block img-fluid" src="http://localhost/ProjetInfo/Vendre/ImagesProduits/3.jpg" alt="Third slide">
             </div>
           </div>
           <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev" style="color: black">
@@ -137,20 +137,19 @@ else{echo "ma base n'existe pas";}
                     <input type="hidden" name="ID_Produit" value='<?php echo $IDBis[$i]?>' /></td>
                   </form>
 
+
+                  <form action="http://localhost/ProjetInfo/Enchere/Encherir.php" method="post">
+                    <td colspan="2" align="right"><input type="submit" value="Enchere" />
+                    <input type="hidden" name="ID_Produit" value='<?php echo $IDBis[$i]?>' /></td>
+                  </form>
+
               </div>
             </div>
           </div>
 
-
-
         <?php
         }   //______________________________________Fin de la boucle________________________________
       ?>
-
-
-         
-
-
 
 
         </div>
