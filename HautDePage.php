@@ -45,6 +45,7 @@
      <?php if(isset($_SESSION['ID']))  //Variation du menu depandant de si un utilisateur est connecté ou non
                   { ?>
     <a class="dropdown-item" href="http://localhost/ProjetInfo/Page/Acheteur.php">Mon compte</a>
+    <a class="dropdown-item" href="http://localhost/ProjetInfo/Page/Vendeur.php">Mon magasin</a>
     <a class="dropdown-item" href="http://localhost/ProjetInfo/Panier.php">Mon Panier</a>
     <a class="dropdown-item" href="http://localhost/ProjetInfo/Deconnexion/Deconnexion.php">Deconnexion</a>
     <?php 

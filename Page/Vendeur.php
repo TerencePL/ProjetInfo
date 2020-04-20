@@ -113,11 +113,11 @@ else{echo "ma base n'existe pas";}
           ?>
           <div class="col-lg-4 col-md-6 mb-1">
             <div class="card h-100">
-              <a href="#"><img class="card-img-top" src="http://localhost/ProjetInfo/ImagesProduits/tresor1.jpg" alt=""></a>
+              <a href="#"><img class="card-img-top" src='http://localhost/ProjetInfo/ImagesProduits/<?php echo $IDBis[$i];?>.jpg' alt=""></a>
                   <div class="card-body">
 
                     <h4 class="card-title">
-                      <a href="#"> <?php echo "".$Nom[$i].'</br>'; ?> </a>
+                      <a href="http://localhost/ProjetInfo/Selected.php"> <?php echo "".$Nom[$i].'</br>'; ?> </a>
                     </h4>
 
                     <h5>  <?php echo "Description: ".$Description[$i].'</br>'; ?>  </h5>
@@ -125,8 +125,8 @@ else{echo "ma base n'existe pas";}
                     <h5>  <?php echo "Sotck: ".$Stock[$i]; ?> </h5>
                   </div>
 
-                  <form action="http://localhost/ProjetInfo/AjoutPanier.php" method="post">
-                    <td colspan="2" align="right"><input type="submit" value="Ajouter au panier" />
+                 <form action="http://localhost/ProjetInfo/Page/Supprimer.php" method="post">
+                    <td colspan="2" align="right"><input type="submit" value="Retirer de la vente" />
                     <input type="hidden" name="ID_Produit" value='<?php echo $IDBis[$i]?>' /></td>
                   </form>
 

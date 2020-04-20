@@ -31,10 +31,10 @@ $Categorie =  isset($_POST["genre"]) ? $_POST["genre"]:"";
 $Description = isset($_POST["description"]) ? $_POST["description"]:"";
 
 
-/*
+
 if (($_FILES['my_file']['name']!="")){
 // Where the file is going to be stored
-	$target_dir = "uploads/";
+	$target_dir = "http://localhost/ProjetInfo/ImagesProduits";
 	$file = $_FILES['my_file']['name'];
 	$path = pathinfo($file);
 	$filename = $path['filename'];
@@ -50,7 +50,7 @@ if (file_exists($path_filename_ext)) {
  echo "Congratulations! File Uploaded Successfully.";
  }
 }
-*/
+
 
 
 $Verif=0;
@@ -60,7 +60,7 @@ $Verif=0;
 if($Verif==0)
 {
 		$bdd = new PDO("mysql:host=localhost;dbname=$dbname;charset=UTF8", $db_login, $db_pass);
-		$sql = "INSERT INTO `produit` (`ID_Vendeur`, `ID_Produit`, `Nom`, `Prix`, `Description`, `Stock`, `NB_Ventes`,`Categorie`,`Enchere`,`EnchereBis`,`ID_Enchere`) VALUES('$ID_Vendeur', '$ID_Produit', '$Nom', '$Prix', '$Description', '$Stock', '0', '$Categorie','0','0','0')";
+		$sql = "INSERT INTO `produit` (`ID_Vendeur`, `ID_Produit`, `Nom`, `Prix`, `Description`, `Stock`, `NB_Ventes`,`Categorie`,`Enchere`,`EnchereBis`,`ID_Enchere`,`Image_Adresse`) VALUES('$ID_Vendeur', '$ID_Produit', '$Nom', '$Prix', '$Description', '$Stock', '0', '$Categorie','0','0','0','')";
 
 
 	
