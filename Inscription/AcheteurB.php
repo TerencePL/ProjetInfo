@@ -32,7 +32,6 @@ $Verif=0;
 //Verifier si le mail du nouveau profil existe déjà ou non dans la bdd
 if($db_found) 
 {
-
 	$sql = "SELECT * FROM acheteur";
 	$result = mysqli_query($db_handle,$sql);
 	while($data = mysqli_fetch_assoc($result)) 
@@ -47,6 +46,15 @@ else
 
 if($Verif==0)
 {
+
+	//Blindage car la BDD ne prend pas null
+	if(is_null($Postal))
+		{$Postal=0;}
+	if(is_null($Telephone))
+		{$Telephone=0;}
+
+
+
 		//Création du compte acheteur
 		$bdd = new PDO("mysql:host=localhost;dbname=$dbname;charset=UTF8", $db_login, $db_pass);
 		$sql = "INSERT INTO `acheteur`(`ID`, `Mail`, `MDP`, `Nom`, `Prenom`, `Adresse`, `Ville`, `Postal`, `Pays`, `Telephone`, `Solde`)  VALUES('$ID','$Mail','$MDP','$Nom','$Prenom','$Adresse','$Ville','$Postal','$Pays','$Telephone','$Solde')"; 

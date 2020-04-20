@@ -6,7 +6,7 @@ session_start();
 $type = isset($_POST["type"])? $_POST["type"] : "";
 
 
-   $dbname = "ProjetInfo";
+   $dbname = "ebayece";
    $db_login = "root";
    $db_pass	= "";
 
@@ -19,6 +19,12 @@ $ID_Produit = isset($_POST["ID_Produit"])? $_POST["ID_Produit"] : "";
 echo "id du produit" .$ID_Produit;
 $ID_User=$_SESSION['ID'];
 $j=0;
+
+
+//TEST
+$ID_Produit = 1;
+
+
 
 $result = mysqli_query($db_handle, "SELECT * FROM panier Where ID_User like '$ID_User'");
 		while($data2 = mysqli_fetch_assoc($result)) 

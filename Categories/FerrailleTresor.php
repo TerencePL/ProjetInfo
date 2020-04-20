@@ -134,7 +134,7 @@ else{echo "ma base n'existe pas";}
                   </div>
 
               <div class="card-footer" action="http://localhost/ProjetInfo/AjoutPanier.php" method="post">
-                <button>Acheter</button>
+              <button>Ajouter au panier</button>
               </div>
             </div>
           </div>
