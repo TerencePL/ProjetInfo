@@ -54,17 +54,22 @@
                 <ul>
                   
                   <li style="color:white"> <font size="+3"> <?php if(isset($_SESSION['ID'])) {echo "".$row_['Prenom'];}?><?php if(isset($_SESSION['ID'])) {echo " ".$row_['Nom'];} 
-                  echo " <br> Tu es lié au compte vendeur: <br>".$row['Pseudo'].''.'<br><br>'; 
+                  //echo " <br> Tu es lié au compte vendeur: <br>".$row['Pseudo'].''.'<br><br>'; 
+                  echo '<br> Tu es lié au compte vendeur: <br> <a href="http://localhost/ProjetInfo/Page/Vendeur.php" title="Vendeur" style="color:blue"><font size="+3">'.$row['Pseudo'].' </font></a></B></font></h1>';
                   echo '<img src="'.$row['Photo_Adresse'].'" alt=""/>'.'<br>';
+
+
+
                 }
                 else   //Si aucune session ouverte
                   {echo "<br><br> Aucun compte connecté  <br><br>";}
 
-                  ?></font> </li> 
-               
-                      
+                  ?>
+                    
+                  </font> </li>     
                 </ul>  
 
+                
                 <br>
                 <a href="http://localhost/ProjetInfo/Deconnexion/Deconnexion.php" title="Deconnexion" style="color:red"><font size="+4">Déconnexion </font></a></B></font></h1>
 
