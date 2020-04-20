@@ -17,7 +17,7 @@ session_start();
 		<div id="corps">
 			
 		
-			<form action="http://localhost/ProjetInfo/Acheter/AchatRedirect.php" method="post">
+			<form action="http://localhost/ProjetInfo/Acheter/AchatRedirectEnchere.php" method="post">
 			<table>
 					<tr>
 						<td>A payer: <?php echo $_SESSION['PrixPanier'];  ?> </td>

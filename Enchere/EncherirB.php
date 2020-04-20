@@ -32,6 +32,8 @@ $rowBis = mysqli_fetch_array($resultBis);
 				if( $currentDateTime < $row['DateEnchere'])
 				{
 
+						//actualise l'enchère
+
 						$OldEnchere = $row['EnchereBis'];
 
 						$bdd = new PDO("mysql:host=localhost;dbname=$dbname;charset=UTF8", $db_login, $db_pass);

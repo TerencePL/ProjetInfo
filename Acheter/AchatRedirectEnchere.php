@@ -2,8 +2,11 @@
 session_start();
 ?>
 
+
+
 <!DOCTYPE html>
-<div id="corps">
+
+		<div id="corps">
 			
 <?php
 $NCarte = isset($_POST['Ncarte'])? $_POST['Ncarte'] : "";
@@ -12,7 +15,7 @@ $DateExpiration = isset($_POST['DateExpiration'])? $_POST['DateExpiration'] : ""
 $ID_Session=$_SESSION['ID'];
 
 
-$database = "EBAYECE";
+$database = "ebayece";
 
 $db_handle = mysqli_connect('localhost', 'root', '');
 $db_found = mysqli_select_db($db_handle, $database);
@@ -25,7 +28,7 @@ if($db_found){
 
 				if (mysqli_num_rows($result) != 0) 
 					{
-						header('Location: http://localhost/ProjetInfo/Acheter/Transaction.php');
+						header('Location: http://localhost/ProjetInfo/Acheter/TransactionEnchere.php');
 					}
 		else{
 			// L un des parametres est inccorect

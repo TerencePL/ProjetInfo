@@ -70,45 +70,15 @@ else{echo "ma base n'existe pas";}
 
         <h1 class="my-4">Catégorie</h1>
         <div class="list-group">
-          <a href="http://localhost/ProjetInfo/FerrailleTresor.php" class="list-group-item">Ferraille et trésor</a>
-          <a href="http://localhost/ProjetInfo/BonMusee.php" class="list-group-item">Bon pour le Musée</a>
-          <a href="http://localhost/ProjetInfo/AccessoireVIP.php" class="list-group-item">Accessoire VIP</a>
+          <a href="http://localhost/ProjetInfo/Categories/FerrailleTresor.php" class="list-group-item">Ferraille et trésor</a>
+          <a href="http://localhost/ProjetInfo/Categories/BonMusee.php" class="list-group-item">Bon pour le Musée</a>
+          <a href="http://localhost/ProjetInfo/Categories/AccessoireVIP.php" class="list-group-item">Accessoire VIP</a>
         </div>
 
       </div>
       <!-- /.col-lg-3 -->
 
       <div class="col-lg-9">
-
-        <div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel">
-          <ol class="carousel-indicators">
-            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-          </ol>
-          <div class="carousel-inner" role="listbox">
-            <div class="carousel-item active">
-              <img class="d-block img-fluid" src="tresor1.jpg" alt="First slide">
-            </div>
-            <div class="carousel-item">
-              <img class="d-block img-fluid" src="tresor2.jpg" alt="Second slide">
-            </div>
-            <div class="carousel-item">
-              <img class="d-block img-fluid" src="tresor3.jpg" alt="Third slide">
-            </div>
-          </div>
-          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev" style="color: black">
-            <span class="carousel-control-prev-icon" aria-hidden="true" ></span>
-            <span class="sr-only" style="color: black">Previous</span>
-          </a>
-          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next" style="color: black">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only" style="color: black">Next</span>
-          </a>
-        </div>
-
-
-
         <div class="row">
 
 
@@ -137,6 +107,10 @@ else{echo "ma base n'existe pas";}
               <div class="card-footer" action="http://localhost/ProjetInfo/AjoutPanier.php" method="post">
                 <button>Acheter</button>
               </div>
+               <form action="http://localhost/ProjetInfo/Enchere/Encherir.php" method="post">
+                    <td colspan="2" align="right"><input type="submit" value="Enchere" />
+                    <input type="hidden" name="ID_Produit" value='<?php echo $IDBis[$i]?>' /></td>
+                  </form>
             </div>
           </div>
 

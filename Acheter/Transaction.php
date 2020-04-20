@@ -230,37 +230,39 @@ if($db_found)
 
 if($Stock > 0)
 {
-$Stock=$Stock - 1;
-$NB_Ventes = $NB_Ventes +1;
+		$Stock=$Stock - 1;
+		$NB_Ventes = $NB_Ventes +1;
 
-//Reduir le stock
-$bdd = new PDO("mysql:host=localhost;dbname=$dbname;charset=UTF8", $db_login, $db_pass);
-$sql = "UPDATE produit SET NB_Ventes = '$NB_Ventes' WHERE ID_Produit like '$ID_Produit5'";
-$bdd->query($sql);
+		//Reduir le stock
+		$bdd = new PDO("mysql:host=localhost;dbname=$dbname;charset=UTF8", $db_login, $db_pass);
+		$sql = "UPDATE produit SET NB_Ventes = '$NB_Ventes' WHERE ID_Produit like '$ID_Produit5'";
+		$bdd->query($sql);
 
-$bdd = new PDO("mysql:host=localhost;dbname=$dbname;charset=UTF8", $db_login, $db_pass);
-$sql = "UPDATE produit SET Stock = '$Stock' WHERE ID_Produit like '$ID_Produit5'";
-$bdd->query($sql);
+		$bdd = new PDO("mysql:host=localhost;dbname=$dbname;charset=UTF8", $db_login, $db_pass);
+		$sql = "UPDATE produit SET Stock = '$Stock' WHERE ID_Produit like '$ID_Produit5'";
+		$bdd->query($sql);
 
 
 
-//Recuperer le solde vendeur
-if($db_found) 
-{
-	$result = mysqli_query($db_handle, "SELECT * FROM vendeur WHERE ID_Vendeur like '$ID_Vendeur' " );
-	while($data = mysqli_fetch_assoc($result)) 
-	{
-		$Solde = $data['Solde'];
+					//Recuperer le solde vendeur
+					if($db_found) 
+					{
+						$result = mysqli_query($db_handle, "SELECT * FROM vendeur WHERE ID_Vendeur like '$ID_Vendeur' " );
+						while($data = mysqli_fetch_assoc($result)) 
+						{
+							$Solde = $data['Solde'];
 
-	}
+						}
+					}
+		$Solde=$Solde + $Prix;
+		$Prix=0;
+
+		//Augmenter le solde vendeur
+		$bdd = new PDO("mysql:host=localhost;dbname=$dbname;charset=UTF8", $db_login, $db_pass);
+		$sql = "UPDATE vendeur SET Solde = '$Solde' WHERE ID_Vendeur like '$ID_Vendeur' ";
+		$bdd->query($sql);
 }
-$Solde=$Solde + $Prix;
-$Prix=0;
-
-//Augmenter le solde vendeur
-$bdd = new PDO("mysql:host=localhost;dbname=$dbname;charset=UTF8", $db_login, $db_pass);
-$sql = "UPDATE vendeur SET Solde = '$Solde' WHERE ID_Vendeur like '$ID_Vendeur' ";
-$bdd->query($sql);}
+else(echo"stock insufisant";)
 
 header("location:http://localhost/ProjetInfo/Vider.php");
 
