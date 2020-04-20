@@ -31,12 +31,23 @@ if($db_found)
 			                    <h4 class="card-title"><a href="#"> <?php echo "".$row['Nom'].'</br>'; ?> </a></h4>
 			                    <h5>  <?php echo "Description: ".$row['Description'].'</br>'; ?>  </h5>
 			                    <h5>  <?php echo "Meilleur enchère: ".$row['EnchereBis'].'</br>'; ?>  </h5>
+			                    <h5>  <?php echo "Date limite: ".$row['DateEnchere'].'</br>'; ?>  </h5>
 			                  </div>
 
 
 			                  <form action="http://localhost/ProjetInfo/Enchere/EncherirB.php" method="post">
-			                    <td colspan="2" align="right"><input type="submit" value="Surencherir" />
-			                    <input type="hidden" name="ID_Produit" value='<?php echo $ID_Produit?>' /></td>
+			                  	<table>
+			                  		<tr>
+										<td>Nouvelle enchère:</td>
+										<td><input type="text" name="newenchere"></td>
+									</tr>
+
+									<tr>
+					                    <td colspan="2" align="right"><input type="submit" value="Surencherir" />
+					                    <input type="hidden" name="ID_Produit" value='<?php echo $ID_Produit?>' /></td>
+				                	</tr>
+
+			                </table>
 			                  </form>
 
 			              </div>
