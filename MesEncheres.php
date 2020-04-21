@@ -115,6 +115,11 @@ else{echo "ma base n'existe pas";}
                     <input type="hidden" name="ID_Produit" value='<?php echo $IDBis[$i]?>' /></td>
                   </form>
 
+                  <form action="http://localhost/ProjetInfo/Negociation/Negocier.php" method="post">
+                    <td colspan="2" align="right"><input type="submit" value="Negocier" />
+                    <input type="hidden" name="ID_Produit" value='<?php echo $IDBis[$i]?>' /></td>
+                  </form>
+
               </div>
             </div>
           </div>

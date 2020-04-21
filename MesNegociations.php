@@ -28,6 +28,8 @@ if($db_found)
       $Description[$j] = $data2['Description'];
       $Stock[$j] = $data2['Stock'];
       $EnchereBis[$j] = $data2['EnchereBis'];
+      $Negociation[$j] = $data2['NegociationBis'];
+      $Offre[$j] = $data2['ContreOffre'];
 
       //$Sport[$j] = $data['Sport'];
 
@@ -100,6 +102,8 @@ else{echo "ma base n'existe pas";}
                     <h5>  <?php echo "$".$Prix[$i]; ?> </h5>
                     <h5>  <?php echo "Sotck: ".$Stock[$i]; ?> </h5>
                     <h5>  <?php echo "Meilleur enchère: $".$EnchereBis[$i]; ?> </h5>
+                    <h5>  <?php echo "Meilleur négociation: $".$Negociation[$i]; ?> </h5>
+                    <h5>  <?php echo "Contre offre: $".$Offre[$i]; ?> </h5>
                   </div>
 
                   <form action="http://localhost/ProjetInfo/AjoutPanier.php" method="post">
@@ -110,6 +114,11 @@ else{echo "ma base n'existe pas";}
 
                   <form action="http://localhost/ProjetInfo/Enchere/Encherir.php" method="post">
                     <td colspan="2" align="right"><input type="submit" value="Enchere" />
+                    <input type="hidden" name="ID_Produit" value='<?php echo $IDBis[$i]?>' /></td>
+                  </form>
+
+                  <form action="http://localhost/ProjetInfo/Negociation/Negocier.php" method="post">
+                    <td colspan="2" align="right"><input type="submit" value="Negocier" />
                     <input type="hidden" name="ID_Produit" value='<?php echo $IDBis[$i]?>' /></td>
                   </form>
 

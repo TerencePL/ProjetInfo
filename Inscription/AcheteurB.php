@@ -22,7 +22,7 @@ $Ville = isset($_POST["ville"]) ? $_POST["ville"]:"";
 $Pays = isset($_POST["pays"]) ? $_POST["pays"]:"";
 $Postal = isset($_POST["postal"]) ? $_POST["postal"]:"";
 $Telephone = isset($_POST["telephone"]) ? $_POST["telephone"]:"";
-$Solde = 0;
+$Solde = 10000;
 
 //if(count($PIN)!=3)
 //{header('Location: http://localhost/ProjetInfo/Inscription/Acheteur.php');}

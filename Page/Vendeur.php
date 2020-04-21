@@ -26,9 +26,12 @@ if($db_found)
       $IDBis[$j] = $data2['ID_Produit'];
       $Nom[$j] = $data2['Nom'];
       $Prix[$j] = $data2['Prix'].'</br>';
-
       $Description[$j] = $data2['Description'];
       $Stock[$j] = $data2['Stock'];
+      $Negociation[$j] = $data2['NegociationBis'];
+      $Enchere[$j] = $data2['Enchere'];
+      $Offre[$j] = $data2['ContreOffre'];
+
     }//end while 
     echo '</br>';
     $NbArticles=$j;
@@ -123,10 +126,18 @@ else{echo "ma base n'existe pas";}
                     <h5>  <?php echo "Description: ".$Description[$i].'</br>'; ?>  </h5>
                     <h5>  <?php echo "$".$Prix[$i]; ?> </h5>
                     <h5>  <?php echo "Sotck: ".$Stock[$i]; ?> </h5>
+                     <h5>  <?php echo "Meilleur enchère: $".$Enchere[$i]; ?> </h5>
+                     <h5>  <?php echo "Meilleur négociation: $".$Negociation[$i]; ?> </h5>
+                     <h5>  <?php echo "Ma contre offre: $".$Offre[$i]; ?> </h5>
                   </div>
 
                   <form action="http://localhost/ProjetInfo/Page/Supprimer.php" method="post">
                     <td colspan="2" align="right"><input type="submit" value="Retirer de la vente" />
+                    <input type="hidden" name="ID_Produit" value='<?php echo $IDBis[$i]?>' /></td>
+                  </form>
+
+                   <form action="http://localhost/ProjetInfo/Offre/ModifierRedirect.php" method="post">
+                    <td colspan="2" align="right"><input type="submit" value="Modifier mon offre" />
                     <input type="hidden" name="ID_Produit" value='<?php echo $IDBis[$i]?>' /></td>
                   </form>
 
