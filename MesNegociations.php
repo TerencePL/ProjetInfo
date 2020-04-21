@@ -6,16 +6,18 @@ $database = "ebayece";
 $db_handle = mysqli_connect('localhost', 'root', '');
 $db_found = mysqli_select_db($db_handle, $database);
 $j=0;
-  
+$NbArticles=0;
+
+
 //si le BDD existe, faire le traitement. Trouver les ID des livres
 if($db_found) 
 {
-  $result = mysqli_query($db_handle, "SELECT * FROM produit WHERE Categorie = 1 ORDER BY ID_Produit" );
+  $result = mysqli_query($db_handle, "SELECT * FROM produit ORDER BY ID_Produit" );
   while($data = mysqli_fetch_assoc($result)) 
   {
     $ID=$data['ID_Produit'];
     
-    $resultBIS = mysqli_query($db_handle, "SELECT * FROM produit Where ID_Produit like '$ID'");
+    $resultBIS = mysqli_query($db_handle, "SELECT * FROM produit Where ID_Negociation like '$ID'");
     while($data2 = mysqli_fetch_assoc($resultBIS)) 
     {
       $j=$j+1;
@@ -65,21 +67,9 @@ else{echo "ma base n'existe pas";}
 
     <div class="row">
 
-      <div class="col-lg-3">
-
-        <h1 class="my-4">Catégorie</h1>
-        <div class="list-group">
-          <a href="http://localhost/ProjetInfo/Categories/FerrailleTresor.php" class="list-group-item">Ferraille et trésor</a>
-          <a href="http://localhost/ProjetInfo/Categories/BonMusee.php" class="list-group-item">Bon pour le Musée</a>
-          <a href="http://localhost/ProjetInfo/Categories/AccessoireVIP.php" class="list-group-item">Accessoire VIP</a>
-        </div>
-
-      </div>
       <!-- /.col-lg-3 -->
 
       <div class="col-lg-9">
-
-
 
 
 
@@ -87,7 +77,10 @@ else{echo "ma base n'existe pas";}
 
 
 
-      <?php       
+<?php    
+
+    if($NbArticles > 0)
+      {   
       // ________________Boucle qui parcoure le nombre de produits en vente de la categorie___________________
         for($i = 1; $i <= $NbArticles; $i++)
         {
@@ -120,17 +113,13 @@ else{echo "ma base n'existe pas";}
                     <input type="hidden" name="ID_Produit" value='<?php echo $IDBis[$i]?>' /></td>
                   </form>
 
-                  <form action="http://localhost/ProjetInfo/Negociation/Negocier.php" method="post">
-                    <td colspan="2" align="right"><input type="submit" value="Negocier" />
-                    <input type="hidden" name="ID_Produit" value='<?php echo $IDBis[$i]?>' /></td>
-                  </form>
-
               </div>
             </div>
           </div>
 
         <?php
-        }   //______________________________________Fin de la boucle________________________________
+        } //______________________________________Fin de la boucle________________________________
+      }else{echo "Pas d'enchères en cours.";}
       ?>
 
 
@@ -148,16 +137,6 @@ else{echo "ma base n'existe pas";}
  <?php include("C:\wamp64\www\ProjetInfo\BasDePage.php"); ?>
 </body>
 
-
-<?php $i=1   //A laisser pour le moment ?>
-          <article>
-                  <form action="http://localhost/ProjetInfo/AjoutPanier.php" method="post">
-                    <td colspan="2" align="right"><input type="submit" value="Ajouter au panier" />
-                    <input type="hidden" name="ID_Produit" value='<?php echo $IDBis[$i]?>' /></td>
-                  </form>
-
-          </article>
-          <br><br>
 
 
 

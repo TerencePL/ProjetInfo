@@ -48,6 +48,7 @@
     <a class="dropdown-item" href="http://localhost/ProjetInfo/Page/Vendeur.php">Mon magasin</a>
     <a class="dropdown-item" href="http://localhost/ProjetInfo/Panier.php">Mon Panier</a>
     <a class="dropdown-item" href="http://localhost/ProjetInfo/MesEncheres.php">Mes Enchères en cours</a>
+    <a class="dropdown-item" href="http://localhost/ProjetInfo/MesNegociations.php">Mes Négotiations</a>
     <a class="dropdown-item" href="http://localhost/ProjetInfo/Deconnexion/Deconnexion.php">Deconnexion</a>
     <?php 
     }

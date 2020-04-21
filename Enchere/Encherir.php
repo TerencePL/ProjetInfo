@@ -13,7 +13,7 @@ $db_found = mysqli_select_db($db_handle, $database);
 $ID_Produit = isset($_POST["ID_Produit"])? $_POST["ID_Produit"] : "";
 //echo "id du produit" .$ID_Produit;
 
-
+include("C:\wamp64\www\ProjetInfo\HautDePage.php"); 
 //Date actuelle
 $currentDateTime = date('Y-m-d H:i:s');
 
